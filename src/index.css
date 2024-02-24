@@ -14,3 +14,11 @@
 @import url(./blocks/header/__account-button-text/header__account-button-text.css);
 @import url(./blocks/header/__account-logo/header__account-logo.css);
 @import url(./blocks/header/__account-icon/header__account-icon.css);
+
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/footer/__description/footer__description.css);
+@import url(./blocks/footer/__line/footer__line.css);
+@import url(./blocks/footer/__text/footer__text.css);
+@import url(./blocks/footer/__year/footer__tear.css);
+@import url(./blocks/footer/__links/footer__links.css);
+@import url(./blocks/footer/__link/footer__link.css);

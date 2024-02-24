@@ -1,0 +1,6 @@
+.footer__text{
+    display: inline-flex;
+    margin: 20px 70px;
+    justify-content: space-between;
+    color: #FFFFFF;
+}
