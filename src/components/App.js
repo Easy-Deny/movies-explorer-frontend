@@ -1,6 +1,9 @@
 import Header from './Header';
-import Footer from './Footer'
-import Portfolio from './Portfolio'
+import AboutMe from './AboutMe';
+import Portfolio from './Portfolio';
+import Footer from './Footer';
+
+
 
 
 //import { Route, Routes, useNavigate } from 'react-router-dom'
@@ -12,6 +15,7 @@ function App() {
       <Header
         loggedIn={loggedIn}
       />
+      <AboutMe/>
       <Portfolio/>
       <Footer/>
 
