@@ -1,0 +1,12 @@
+.portfolio__table {
+    width: 100%;
+    color: #FFFFFF;
+    border-collapse: collapse;
+    align-items: center;
+    font-family: Inter;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: -0.04em;
+    text-align: left;
+}

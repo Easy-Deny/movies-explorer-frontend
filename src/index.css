@@ -15,6 +15,12 @@
 @import url(./blocks/header/__account-logo/header__account-logo.css);
 @import url(./blocks/header/__account-icon/header__account-icon.css);
 
+@import url(./blocks/portfolio/portfolio.css);
+@import url(./blocks/portfolio/__table/portfolio__table.css);
+@import url(./blocks/portfolio/__table-string/portfolio__table-string.css);
+@import url(./blocks/portfolio/__table-column/portfolio__table-column.css);
+@import url(./blocks/portfolio/__title/portfolio__title.css);
+
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__description/footer__description.css);
 @import url(./blocks/footer/__line/footer__line.css);
