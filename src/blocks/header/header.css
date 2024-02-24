@@ -1,0 +1,10 @@
+.header {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-bottom: 1px rgba(255, 0, 0, 0.7) solid;
+    padding: 18px 70px;
+    box-sizing: border-box;
+    background-color: #073042;
+}
