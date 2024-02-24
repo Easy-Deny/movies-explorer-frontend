@@ -6,7 +6,6 @@
 @import url(./blocks/header/__logo/header__logo.css);
 @import url(./blocks/header/__button/header__button.css);
 @import url(./blocks/header/__button/_green/header__button_green.css);
-@import url(./blocks/header/__navigation-button/header__navigation-button.css);
 @import url(./blocks/header/__menu-icon/header__menu-icon.css);
 @import url(./blocks/header/__menu-button/header__menu-button.css);
 @import url(./blocks/header/__navigation/header__navigation.css);

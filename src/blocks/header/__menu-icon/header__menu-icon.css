@@ -1,5 +1,10 @@
-.header__menu-icon{
+.header__menu-icon {
     background-color: #FFFFFF;
     width: 28px;
     height: 3px;
+    margin-bottom: 7px;
+}
+
+.header__menu-icon:last-child {
+    margin-bottom: 0px;
 }

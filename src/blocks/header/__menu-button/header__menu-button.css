@@ -1,7 +1,7 @@
 .header__menu-button{
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    margin: 7px;
 }
 
 @media screen and (min-width:768px) {
