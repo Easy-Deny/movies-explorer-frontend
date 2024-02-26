@@ -1,0 +1,18 @@
+.aboutMe{
+    background-color: #202020;
+    padding: 110px 70px 0 70px;
+    font-family: Inter;
+    color:  #FFFFFF;
+}
+
+@media screen and (max-width:768px) {
+    .aboutMe {
+        padding: 90px 50px 0 50px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .aboutMe {
+        padding: 70px 14px 0 14px;
+    }
+}

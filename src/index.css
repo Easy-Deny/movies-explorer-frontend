@@ -15,6 +15,15 @@
 @import url(./blocks/header/__account-logo/header__account-logo.css);
 @import url(./blocks/header/__account-icon/header__account-icon.css);
 
+@import url(./blocks/aboutMe/aboutMe.css);
+@import url(./blocks/aboutMe/__student/aboutMe__student.css);
+@import url(./blocks/aboutMe/__name/aboutMe__name.css);
+@import url(./blocks/aboutMe/__description/aboutMe__description.css);
+@import url(./blocks/aboutMe/__profession/aboutMe__profession.css);
+@import url(./blocks/aboutMe/__legend/aboutMe__legend.css);
+@import url(./blocks/aboutMe/__link/aboutMe__link.css);
+@import url(./blocks/aboutMe/__photo/aboutMe__photo.css);
+
 @import url(./blocks/portfolio/portfolio.css);
 @import url(./blocks/portfolio/__table/portfolio__table.css);
 @import url(./blocks/portfolio/__table-string/portfolio__table-string.css);

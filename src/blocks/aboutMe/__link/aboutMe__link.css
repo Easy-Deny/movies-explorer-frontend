@@ -1,0 +1,17 @@
+.aboutMe__link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    margin: 0;
+    grid-area: link;
+    align-self: flex-end;
+}
+
+@media screen and (max-width:320px) {
+    .aboutMe__link {
+        align-self: flex-start;
+    }
+}
