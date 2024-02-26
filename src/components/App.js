@@ -1,4 +1,5 @@
 import Header from './Header';
+import Techs from './Techs';
 import AboutMe from './AboutMe';
 import Portfolio from './Portfolio';
 import Footer from './Footer';
@@ -15,6 +16,7 @@ function App() {
       <Header
         loggedIn={loggedIn}
       />
+      <Techs/>
       <AboutMe/>
       <Portfolio/>
       <Footer/>

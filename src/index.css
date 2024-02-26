@@ -15,8 +15,16 @@
 @import url(./blocks/header/__account-logo/header__account-logo.css);
 @import url(./blocks/header/__account-icon/header__account-icon.css);
 
+@import url(./blocks/heading/heading.css);
+
+@import url(./blocks/techs/techs.css);
+@import url(./blocks/techs/__section/techs__section.css);
+@import url(./blocks/techs/__heading/techs__heading.css);
+@import url(./blocks/techs/__description/techs__description.css);
+@import url(./blocks/techs/__technologies/techs__technologies.css);
+@import url(./blocks/techs/__technology/techs__technology.css);
+
 @import url(./blocks/aboutMe/aboutMe.css);
-@import url(./blocks/aboutMe/__student/aboutMe__student.css);
 @import url(./blocks/aboutMe/__name/aboutMe__name.css);
 @import url(./blocks/aboutMe/__description/aboutMe__description.css);
 @import url(./blocks/aboutMe/__profession/aboutMe__profession.css);

@@ -1,9 +1,11 @@
 import avatar from '../images/avatar.png';
+import Heading from './Heading';
 
 function AboutMe() {
     return (
         <article className="aboutMe">
-            <p className="aboutMe__student">Студент</p>
+            <Heading
+            heading={'Студент'}/>
             <section className="aboutMe__description">
                 <img className="aboutMe__photo" src={avatar} alt='Аватар' />
                 <p className="aboutMe__name">Виталий</p>
