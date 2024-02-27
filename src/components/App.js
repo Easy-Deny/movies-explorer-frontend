@@ -1,9 +1,11 @@
 import Header from './Header';
+import Promo from './Promo';
 import AboutProject from './AboutProject';
 import Techs from './Techs';
 import AboutMe from './AboutMe';
 import Portfolio from './Portfolio';
 import Footer from './Footer';
+
 
 
 
@@ -17,6 +19,7 @@ function App() {
       <Header
         loggedIn={loggedIn}
       />
+      <Promo/>
       <AboutProject/>
       <Techs/>
       <AboutMe/>

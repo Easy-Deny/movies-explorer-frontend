@@ -17,6 +17,13 @@
 
 @import url(./blocks/heading/heading.css);
 
+@import url(./blocks/promo/promo.css);
+@import url(./blocks/promo/__section/promo__section.css);
+@import url(./blocks/promo/__description/promo__description.css);
+@import url(./blocks/promo/__text/promo__text.css);
+@import url(./blocks/promo/__heading/promo__heading.css);
+@import url(./blocks/promo/__button/promo__button.css);
+
 @import url(./blocks/aboutProject/aboutProject.css);
 @import url(./blocks/aboutProject/__section/aboutProject__section.css);
 @import url(./blocks/aboutProject/__description/aboutProject__description.css);

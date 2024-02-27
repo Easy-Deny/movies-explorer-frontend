@@ -1,0 +1,6 @@
+.promo__description {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    max-width: 640px;
+}
