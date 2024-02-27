@@ -17,6 +17,17 @@
 
 @import url(./blocks/heading/heading.css);
 
+@import url(./blocks/aboutProject/aboutProject.css);
+@import url(./blocks/aboutProject/__section/aboutProject__section.css);
+@import url(./blocks/aboutProject/__description/aboutProject__description.css);
+@import url(./blocks/aboutProject/__text/aboutProject__text.css);
+@import url(./blocks/aboutProject/__heading/aboutProject__heading.css);
+@import url(./blocks/aboutProject/__graph/aboutProject__graph.css);
+@import url(./blocks/aboutProject/__graphText/aboutProject__graphText.css);
+@import url(./blocks/aboutProject/__period/aboutProject__period.css);
+@import url(./blocks/aboutProject/__period/_green/aboutProject__period_green.css);
+@import url(./blocks/aboutProject/__signature/aboutProject__signature.css);
+
 @import url(./blocks/techs/techs.css);
 @import url(./blocks/techs/__section/techs__section.css);
 @import url(./blocks/techs/__heading/techs__heading.css);
