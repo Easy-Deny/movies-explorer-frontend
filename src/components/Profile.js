@@ -6,9 +6,8 @@ import Header from './Header';
 
 function Profile(props) {
     return (
-        
-        <article className="auth">
-            <Header/>
+        <article className="profile">
+              <Header/>
             <Link to="/" className="page__logo">
                 <img className="page__logo-icon" src={logo} alt="Логотип" />
             </Link>
