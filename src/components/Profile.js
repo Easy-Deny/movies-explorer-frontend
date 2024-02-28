@@ -21,7 +21,7 @@ function Profile(props) {
                 <span className="profile__text auth__text_red">Error</span>
                 <button className="profile__button" title="Войти" type="submit">Редактировать</button>
             </form>
-            <button className="profile__button profile__button_red" title="Войти" type="submit">Выйти из аккаунта</button>
+            <button className="profile__button profile__button_red" title="Войти" type="submit" onClick={props.logout}>Выйти из аккаунта</button>
         </article>
     );
 }
