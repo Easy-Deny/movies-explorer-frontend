@@ -1,0 +1,12 @@
+.profile__form-block {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.profile__form-block:last-of-type {
+    border-top: 1px #424242 solid;
+    padding-top: 18px;
+    margin-top: 3px;
+}

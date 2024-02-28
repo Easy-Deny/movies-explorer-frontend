@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Header(props) {
     return (
-        <header className="header">
+        <header className="header" style={{ background: (props.greenTheme ? '#073042' : 'none') }}>
             <Link to="/" className="page__logo">
                 <img className="page__logo-icon" src={logo} alt="Логотип" />
             </Link>

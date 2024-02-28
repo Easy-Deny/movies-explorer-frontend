@@ -81,3 +81,12 @@
 @import url(./blocks/auth/__route/auth__route.css);
 @import url(./blocks/auth/__description/auth__description.css);
 @import url(./blocks/auth/__link/auth__link.css);
+
+@import url(./blocks/profile/profile.css);
+@import url(./blocks/profile/__form/profile__form.css);
+@import url(./blocks/profile/__title/profile__title.css);
+@import url(./blocks/profile/__form-block/profile__form-block.css);
+@import url(./blocks/profile/__text/profile__text.css);
+@import url(./blocks/profile/__input/profile__input.css);
+@import url(./blocks/profile/__button/profile__button.css);
+@import url(./blocks/profile/__button/_red/profile__button_red.css);

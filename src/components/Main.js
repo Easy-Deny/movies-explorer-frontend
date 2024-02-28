@@ -11,6 +11,7 @@ function Main(props) {
       <div className="App">
         <Header
           loggedIn={props.loggedIn}
+          greenTheme={true}
         />
         <Promo/>
         <AboutProject/>

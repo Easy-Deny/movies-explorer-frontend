@@ -15,7 +15,7 @@ return (
         <Route path="/" element={<Main loggedIn={loggedIn} />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<Register />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile loggedIn={loggedIn}/>} />
         <Route path='*' element={<Page404 />} />
       </Routes>
     </BrowserRouter>
