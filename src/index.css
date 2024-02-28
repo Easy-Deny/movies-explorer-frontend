@@ -1,9 +1,11 @@
 @import url(./vendor/normalize.css);
 @import url(./vendor/fonts.css);
 
+@import url(./blocks/page/page.css);
+@import url(./blocks/page/__logo-icon/page__logo-icon.css);
+@import url(./blocks/page/__logo/page__logo.css);
+
 @import url(./blocks/header/header.css);
-@import url(./blocks/header/__logo-box/header__logo-box.css);
-@import url(./blocks/header/__logo/header__logo.css);
 @import url(./blocks/header/__button/header__button.css);
 @import url(./blocks/header/__button/_green/header__button_green.css);
 @import url(./blocks/header/__menu-icon/header__menu-icon.css);
@@ -68,3 +70,14 @@
 @import url(./blocks/page404/__heading/page404__heading.css);
 @import url(./blocks/page404/__description/page404__description.css);
 @import url(./blocks/page404/__link/page404__link.css);
+
+@import url(./blocks/auth/auth.css);
+@import url(./blocks/auth/__title/auth__title.css);
+@import url(./blocks/auth/__form/auth__form.css);
+@import url(./blocks/auth/__text/auth__text.css);
+@import url(./blocks/auth/__input/auth__input.css);
+@import url(./blocks/auth/__text/_red/auth__text_red.css);
+@import url(./blocks/auth/__button/auth__button.css);
+@import url(./blocks/auth/__route/auth__route.css);
+@import url(./blocks/auth/__description/auth__description.css);
+@import url(./blocks/auth/__link/auth__link.css);

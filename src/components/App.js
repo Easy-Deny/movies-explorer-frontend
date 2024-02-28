@@ -1,19 +1,14 @@
-import Main from './Main';
 import Login from './Login';
+import Main from './Main';
 import Page404 from './Page404';
 import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
-//function goLogin() {
-//  window.location.assign('/sign-in')
-//}
-
 function App() {
-  //  const navigate = useNavigate();
-  // const [loggedIn, setLoggedIn] = useState(false);
+
   const loggedIn = false;
   return (
-    <div className="App">
+    <div className="page">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main loggedIn={loggedIn} />} />
