@@ -1,34 +1,27 @@
-import Header from './Header';
-import Promo from './Promo';
-import AboutProject from './AboutProject';
-import Techs from './Techs';
-import AboutMe from './AboutMe';
-import Portfolio from './Portfolio';
-import Footer from './Footer';
+import Main from './Main';
+import Login from './Login';
+import Page404 from './Page404';
+import React from 'react';
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
-
-
-
-
-//import { Route, Routes, useNavigate } from 'react-router-dom'
+//function goLogin() {
+//  window.location.assign('/sign-in')
+//}
 
 function App() {
+  //  const navigate = useNavigate();
+  // const [loggedIn, setLoggedIn] = useState(false);
   const loggedIn = false;
   return (
     <div className="App">
-      <Header
-        loggedIn={loggedIn}
-      />
-      <Promo/>
-      <AboutProject/>
-      <Techs/>
-      <AboutMe/>
-      <Portfolio/>
-      <Footer/>
-
-
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main loggedIn={loggedIn} />} />
+          <Route path="/sign-in" element={<Login />} />
+          <Route path='*' element={<Page404 />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
-
 export default App;
