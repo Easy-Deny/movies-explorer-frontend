@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 function Login(props) {
     return (
         <article className="auth">
-            <div className="page__logo">
+            <Link to="/" className="page__logo">
                 <img className="page__logo-icon" src={logo} alt="Логотип" />
-            </div>
+            </Link>
             <h2 className="auth__title">Рады видеть!</h2>
             <form className="auth__form" action="#" onSubmit={props.onSubmit}>
                 <p className="auth__text">E-mail</p>
@@ -15,7 +15,7 @@ function Login(props) {
                 <span className="auth__text auth__text_red">Error</span>
                 <p className="auth__text">Пароль</p>
                 <input className="auth__input" name="password" type="password"
-                    placeholder="" required minLength="2" maxLength="200" value={props.password}/>
+                    placeholder="" required minLength="2" maxLength="200" value={props.password} />
                 <span className="auth__text auth__text_red">Error</span>
                 <button className="auth__button" title="Войти" type="submit">Войти</button>
             </form>
