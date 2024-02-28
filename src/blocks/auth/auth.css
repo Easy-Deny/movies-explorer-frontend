@@ -5,5 +5,16 @@
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    height: 100vh;
+}
+@media screen and (max-width:768px) {
+    .auth {
+        padding-top: 232px;
+    }
+}
+@media screen and (max-width:320px) {
+    .auth {
+        padding-top: 56px;
+        align-items: center;
+        width: 81.25%;
+    }
 }
