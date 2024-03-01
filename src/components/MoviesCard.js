@@ -1,19 +1,19 @@
+import React from "react";
 function MoviesCard(props) {
-    ;
-    const isOwn = false;
-
-    function handleAddClick() {
-        props.onCardAdd(props.newCard);
+    
+    const [isOwn, setIsOwn] = React.useState();
+    function handleAddCardClick(){
+        setIsOwn(!isOwn);
     }
-
+    
     return (
         <article className="card">
-            <img className="card__img" src={props.newCard.link} alt={props.newCard.name} />
+            <img className="card__img" src={props.card.link} alt={props.card.name} />
             <div className="card__description">
-                <h2 className="card__name">{props.newCard.name}</h2>
-                <button className={isOwn ? 'card__flag card__flag_is-added' : 'card__flag'} type="button" onClick={handleAddClick}></button>
+                <h2 className="card__name">{props.card.name}</h2>
+                <button className={props.markerTypeCircle ? isOwn ? 'card__flag card__flag_type_circle card__flag_is-added' : 'card__flag card__flag_type_circle'  : 'card__flag card__flag_type_cross'} onClick={handleAddCardClick} type="button" ></button>
             </div>
-            <p className="card__duration">{props.newCard.duration}</p>
+            <p className="card__duration">{props.card.duration}</p>
         </article>
     );
 }

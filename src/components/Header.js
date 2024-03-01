@@ -9,7 +9,7 @@ function Header(props) {
                 <img className="page__logo-icon" src={logo} alt="Логотип" />
             </Link>
             <navi className="header__navigation" style={{ display: (props.loggedIn ? 'inline-flex' : 'none') }}>
-                <button className="header__button">Фильмы</button>
+                <Link to="/movies" className="header__button">Фильмы</Link>
                 <button className="header__button">Сохранённые фильмы</button>
             </navi>
             <div className="header__account">

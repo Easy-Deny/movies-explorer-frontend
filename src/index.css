@@ -96,4 +96,9 @@
 @import url(./blocks/card/__name/card__name.css);
 @import url(./blocks/card/__duration/card__duration.css);
 @import url(./blocks/card/__flag/card__flag.css);
+@import url(./blocks/card/__flag/_type/card__flag_type_circle.css);
+@import url(./blocks/card/__flag/_type/card__flag_type_cross.css);
+@import url(./blocks/card/__flag/_is-added/card__flag_is-added.css);
 @import url(./blocks/card/__img/card__img.css);
+
+@import url(./blocks/cards/cards.css);

@@ -5,17 +5,14 @@ import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Register from './Register';
 import Profile from './Profile';
-import MoviesCard from './MoviesCard';
+import MoviesCardList from './MoviesCardList';
+import cards from '../temp/cardList';
+import Movies from './Movies';
+
 
 function App() {
   const loggedIn = localStorage.getItem('loggedIn');
-  const newCard = {
-    name: 'card',
-    link:'https://sportishka.com/uploads/posts/2023-12/1701459729_sportishka-com-p-kharlei-naklkhed-oboi-48.jpg',
-    duration: 'card duration'
-  }
   
-
   function logout() {
     localStorage.removeItem('loggedIn');
     window.location.assign('/');
@@ -44,8 +41,10 @@ function App() {
             onSubmit={login}
             logout={logout}
           />} />
-           <Route path="/card" element={<MoviesCard
-           newCard={newCard}/>} />
+          <Route path="/movies" element={<Movies
+            cards={cards} />} />
+          <Route path="/movies2" element={<MoviesCardList
+            cards={cards} />} />
           <Route path='*' element={<Page404 />} />
         </Routes>
       </BrowserRouter>
