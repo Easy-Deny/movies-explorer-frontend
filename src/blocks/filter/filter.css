@@ -1,0 +1,6 @@
+.filter{
+    margin: 0 70px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 14px
+}

@@ -107,3 +107,9 @@
 @import url(./blocks/search/__form/search__form.css);
 @import url(./blocks/search/__input/search__input.css);
 @import url(./blocks/search/__button/search__button.css);
+
+@import url(./blocks/filter/filter.css);
+@import url(./blocks/filter/__text/filter__text.css);
+@import url(./blocks/filter/__button/filter__button.css);
+@import url(./blocks/filter/__button/_active/filter__button_active.css);
+@import url(./blocks/filter/__slider/filter__slider.css);
