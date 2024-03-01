@@ -1,0 +1,8 @@
+.card__flag {
+    width: 16px;
+    height: 16px;
+    box-shadow: 0px 3px 6px 0px #00000017;
+    border: 2px #FFFFFF solid;
+    border-radius: 50px;
+    background-color: #313131;
+}
