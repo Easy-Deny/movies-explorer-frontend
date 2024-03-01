@@ -1,0 +1,7 @@
+.search__form{
+    border-bottom: 1px #424242 solid;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 0 13px 0;
+}

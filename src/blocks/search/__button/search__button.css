@@ -1,0 +1,10 @@
+.search__button{
+    background-color: #4285F4;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    border: none;
+    background-image:  url(../../../images/arrow_icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
