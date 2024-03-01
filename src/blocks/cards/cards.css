@@ -1,19 +1,4 @@
-.cards {
-    display: grid;
-    padding: 70px 70px 30px;
-    grid-template-columns: repeat(auto-fit, 270px);
-    gap: 32px 20px;
-}
-
-@media screen and (max-width:880px) {
-    .cards {
-        max-width: 584px;
-        margin: 0 auto;
-    }
-}
-
-@media screen and (max-width:584px) {
-    .cards {
-        max-width: 282px;
-    }
+.cards{
+  display: flex;
+  flex-direction: column;
 }

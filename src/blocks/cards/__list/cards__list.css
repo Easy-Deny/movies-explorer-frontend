@@ -1,0 +1,8 @@
+.cards__list{
+        display: grid;
+        padding: 117px 70px 30px;
+        grid-template-columns: repeat(auto-fit, 270px);
+        gap: 32px 20px;
+        box-sizing:content-box;
+    }
+

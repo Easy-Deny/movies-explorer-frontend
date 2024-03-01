@@ -102,6 +102,8 @@
 @import url(./blocks/card/__img/card__img.css);
 
 @import url(./blocks/cards/cards.css);
+@import url(./blocks/cards/__list/cards__list.css);
+@import url(./blocks/cards/__button/cards__button.css);
 
 @import url(./blocks/search/search.css);
 @import url(./blocks/search/__form/search__form.css);

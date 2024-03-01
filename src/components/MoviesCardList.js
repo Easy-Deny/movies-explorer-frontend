@@ -3,9 +3,9 @@ import MoviesCard from './MoviesCard';
 
 export function MoviesCardList(props) {
     return (
-        <article >
+        <article className="cards">
             <FilterCheckbox/>
-            <section className="cards">
+            <section className="cards__list">
             {props.cards.map((card) => {
                 return <MoviesCard
                     key={card._id}
@@ -14,6 +14,7 @@ export function MoviesCardList(props) {
                 />
             })}
             </section>
+            <button className="cards__button">Ещё</button>
         </article>
     );
 }
