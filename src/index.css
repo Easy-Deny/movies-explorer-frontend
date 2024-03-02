@@ -126,3 +126,5 @@
 @import url(./blocks/popup/__close-button/popup__close-button.css);
 @import url(./blocks/popup/__link/popup__link.css);
 @import url(./blocks/popup/__link/_underline/popup__link_underline.css);
+
+@import url(./blocks/preloader/preloader.css);
