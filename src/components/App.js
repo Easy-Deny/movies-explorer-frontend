@@ -11,7 +11,7 @@ import SavedMovies from './SavedMovies';
 
 
 function App() {
-  const loggedIn = localStorage.getItem('loggedIn');
+  var loggedIn = localStorage.getItem('loggedIn');
   
   function logout() {
     localStorage.removeItem('loggedIn');
@@ -20,9 +20,10 @@ function App() {
   }
   function login(e) {
     e.preventDefault();
+    localStorage.setItem('loggedIn', true);
     window.location.assign('/');
   }
-  function goLogin(e) {
+  function registration(e) {
     e.preventDefault();
     window.location.assign('/sign-in');
   }
@@ -35,16 +36,18 @@ function App() {
           <Route path="/sign-in" element={<Login
             onSubmit={login} />} />
           <Route path="/sign-up" element={<Register
-            onSubmit={goLogin} />} />
+            onSubmit={registration} />} />
           <Route path="/profile" element={<Profile
             loggedIn={loggedIn}
             onSubmit={login}
             logout={logout}
           />} />
           <Route path="/movies" element={<Movies
-            cards={cards} />} />
+            cards={cards}
+            loggedIn={loggedIn} />} />
           <Route path="/saved-movies" element={<SavedMovies
-            cards={cards} />} />
+            cards={cards}
+            loggedIn={loggedIn} />} />
           <Route path='*' element={<Page404 />} />
         </Routes>
       </BrowserRouter>

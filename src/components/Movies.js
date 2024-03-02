@@ -7,7 +7,7 @@ export function Movies(props) {
     const markerTypeCircle = true;
     return (
         <article>
-            <Header />
+            <Header loggedIn={props.loggedIn}/>
             <SearchForm/>
             <MoviesCardList
                 cards={props.cards}

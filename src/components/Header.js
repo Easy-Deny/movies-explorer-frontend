@@ -1,6 +1,7 @@
 import logo from '../images/header__logo.svg';
 import accountIcon from '../images/header__account-icon.svg';
 import { Link } from 'react-router-dom';
+import Navigation from './Navigation';
 
 function Header(props) {
     return (
@@ -8,10 +9,8 @@ function Header(props) {
             <Link to="/" className="page__logo">
                 <img className="page__logo-icon" src={logo} alt="Логотип" />
             </Link>
-            <navi className="header__navigation" style={{ display: (props.loggedIn ? 'inline-flex' : 'none') }}>
-                <Link to="/movies" className="header__button">Фильмы</Link>
-                <Link to="/saved-movies" className="header__button">Сохранённые фильмы</Link>
-            </navi>
+            <Navigation
+                loggedIn={props.loggedIn} />
             <div className="header__account">
                 <Link to="/sign-up" className="header__button" style={{ display: (!props.loggedIn ? 'inline-flex' : 'none') }}>Регистрация</Link>
                 <Link to="/sign-in" className="header__button header__button_green" style={{ display: (!props.loggedIn ? 'inline-flex' : 'none') }}>Войти</Link>

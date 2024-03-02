@@ -1,4 +1,4 @@
-.header__navigation{
+.navigation{
     display: flex;
     gap: 16px;
     font-size: 13px;
@@ -9,7 +9,7 @@
  }
 
 @media screen and (max-width:768px) {
-    .header__navigation {
+    .navigation {
         display: none;
     }
 }
