@@ -13,3 +13,9 @@
         gap:23px 26px;
     }
 }
+
+@media screen and (max-width:320px) {
+    .aboutProject__description {
+        gap:15px;
+    }
+}

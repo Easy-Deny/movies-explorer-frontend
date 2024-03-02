@@ -10,3 +10,8 @@
         gap: 20px;
     }
 }
+@media screen and (max-width:320px) {
+    .promo__description {
+        gap: 25px;
+    }
+}

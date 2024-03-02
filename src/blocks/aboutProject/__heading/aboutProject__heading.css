@@ -4,3 +4,15 @@
     letter-spacing: -0.04em;
     text-align: left;
 }
+
+@media screen and (max-width:320px) {
+    .aboutProject__heading {
+        font-size: 18px;
+        line-height: 22px;
+        width: 100%;
+        margin-top: 40px;
+    }
+    .aboutProject__heading:nth-of-type(2){
+        order: 3;
+    }
+}

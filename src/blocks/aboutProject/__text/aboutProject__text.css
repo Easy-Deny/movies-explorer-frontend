@@ -13,3 +13,14 @@
         line-height: 18px;   
     }
 }
+
+@media screen and (max-width:320px) {
+    .aboutProject__text {
+        font-size: 11px;
+        line-height: 16px;
+        width: 100%;
+    }
+    .aboutProject__text:last-of-type{
+        order: 10;
+    }
+}
