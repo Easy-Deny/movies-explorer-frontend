@@ -1,4 +1,4 @@
-.navigation{
+.navigation {
     display: flex;
     gap: 16px;
     font-size: 13px;
@@ -6,7 +6,8 @@
     line-height: 18px;
     letter-spacing: 0em;
     text-align: right;
- }
+    margin-left: 60px;
+}
 
 @media screen and (max-width:768px) {
     .navigation {

@@ -58,6 +58,7 @@
 @import url(./blocks/portfolio/__table-string/portfolio__table-string.css);
 @import url(./blocks/portfolio/__table-column/portfolio__table-column.css);
 @import url(./blocks/portfolio/__title/portfolio__title.css);
+@import url(./blocks/portfolio/__link/portfolio__link.css);
 
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__description/footer__description.css);

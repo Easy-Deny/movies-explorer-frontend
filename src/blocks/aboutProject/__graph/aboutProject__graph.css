@@ -3,6 +3,6 @@
     margin: 0;
     padding: 110px 0;
     display: grid;
-    gap:26px 0px;
+    gap:16px 0px;
     grid-template-columns: 1fr 4fr;
 }

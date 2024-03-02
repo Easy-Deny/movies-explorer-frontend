@@ -1,5 +1,6 @@
 .portfolio__table-string {
     border-bottom: 1px #424242 solid;
+    line-height: 87px;
 }
 
 .portfolio__table-string:last-child {
