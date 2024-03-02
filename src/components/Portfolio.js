@@ -1,6 +1,6 @@
 function Portfolio() {
     return (
-        <section className="portfolio">
+        <article className="portfolio">
             <p className="portfolio__title">Портфолио</p>
             <table className="portfolio__table">
                 <tr className="portfolio__table-string">
@@ -18,7 +18,7 @@ function Portfolio() {
             </table>
 
            
-        </section >
+        </article>
     );
 }
 export default Portfolio;

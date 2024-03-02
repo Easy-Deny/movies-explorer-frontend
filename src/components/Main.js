@@ -8,7 +8,7 @@ import Footer from './Footer';
 
 function Main(props) {
     return (
-      <div className="App">
+      <main className="App">
         <Header
           loggedIn={props.loggedIn}
           greenTheme={true}
@@ -19,7 +19,7 @@ function Main(props) {
         <AboutMe/>
         <Portfolio/>
         <Footer/>
-      </div>
+      </main>
     );
   }
   export default Main;

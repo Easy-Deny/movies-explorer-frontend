@@ -10,7 +10,7 @@ function Header(props) {
             </Link>
             <navi className="header__navigation" style={{ display: (props.loggedIn ? 'inline-flex' : 'none') }}>
                 <Link to="/movies" className="header__button">Фильмы</Link>
-                <button className="header__button">Сохранённые фильмы</button>
+                <Link to="/saved-movies" className="header__button">Сохранённые фильмы</Link>
             </navi>
             <div className="header__account">
                 <Link to="/sign-up" className="header__button" style={{ display: (!props.loggedIn ? 'inline-flex' : 'none') }}>Регистрация</Link>

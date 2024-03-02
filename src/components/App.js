@@ -5,9 +5,9 @@ import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Register from './Register';
 import Profile from './Profile';
-import MoviesCardList from './MoviesCardList';
 import cards from '../temp/cardList';
 import Movies from './Movies';
+import SavedMovies from './SavedMovies';
 
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
           />} />
           <Route path="/movies" element={<Movies
             cards={cards} />} />
-          <Route path="/movies2" element={<MoviesCardList
+          <Route path="/saved-movies" element={<SavedMovies
             cards={cards} />} />
           <Route path='*' element={<Page404 />} />
         </Routes>

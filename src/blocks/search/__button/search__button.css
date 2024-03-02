@@ -9,6 +9,10 @@
     background-position: center;
 }
 
+.search__button:hover{
+    cursor: pointer;
+}
+
 @media screen and (max-width:320px) {
     .search__button {
         margin-top: -2px;
