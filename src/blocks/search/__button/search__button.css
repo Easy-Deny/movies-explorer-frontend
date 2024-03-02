@@ -8,3 +8,9 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+@media screen and (max-width:320px) {
+    .search__button {
+        margin-top: -2px;
+    }
+}

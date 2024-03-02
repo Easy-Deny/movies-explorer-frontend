@@ -1,3 +1,13 @@
 .search{
     padding: 70px 70px 32px;
 }
+@media screen and (max-width:768px) {
+    .search {
+        padding: 80px 30px 28px;
+    }
+}
+@media screen and (max-width:320px) {
+    .search {
+        padding: 85px 14px 39px;
+    }
+}

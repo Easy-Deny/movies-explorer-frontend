@@ -7,14 +7,14 @@
     margin: 74px auto 124px auto;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (max-width:768px) {
     .profile__title {
         margin-top: 236px;
         margin-bottom: 96px;
     }
 }
 
-@media screen and (min-width:320px) {
+@media screen and (max-width:320px) {
     .profile__title {
         margin-top: 58px;
         margin-bottom: 82px;

@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 
-@media screen and (min-width:320px) {
+@media screen and (max-width:320px) {
     .profile__button {
         font-size: 12px;
         line-height: 15px;

@@ -2,5 +2,15 @@
     width: 100%;
     object-position: center;
     object-fit: cover;
-    height: 151px;
+    max-height: 151px;
+}
+@media screen and (max-width:768px) {
+    .card__img {
+        max-height: 190px;
+    }
+}
+@media screen and (max-width:320px) {
+    .card__img {
+        max-height: 168px;
+    }
 }

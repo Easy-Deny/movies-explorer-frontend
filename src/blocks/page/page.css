@@ -1,5 +1,17 @@
-.page{
+.page {
+    font-family: "Inter", "Arial", sans-serif;
     background-color: #202020;
     font-family: Inter;
     color: #FFFFFF;
+    background-size: cover;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    padding: 0 auto;
+    height: 100%;
+    width: 100%;
+    background-size: cover
 }

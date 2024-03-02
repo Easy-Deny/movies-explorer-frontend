@@ -13,3 +13,9 @@
     color: #FFFFFF;
     padding: 10px 147px;
 }
+
+@media screen and (max-width:320px) {
+    .cards__button {
+        padding: 10px 107px;
+    }
+}
