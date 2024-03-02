@@ -11,15 +11,16 @@ import SavedMovies from './SavedMovies';
 
 
 function App() {
-  var loggedIn = localStorage.getItem('loggedIn');
-  
+  const [loggedIn, setLoggedIn] = React.useState();
+
   function logout() {
     localStorage.removeItem('loggedIn');
+    setLoggedIn(false);
     window.location.assign('/');
-
   }
   function login(e) {
     e.preventDefault();
+    setLoggedIn(true);
     localStorage.setItem('loggedIn', true);
     window.location.assign('/');
   }
@@ -32,7 +33,9 @@ function App() {
     <div className="page">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main loggedIn={loggedIn} />} />
+          <Route path="/" element={<Main
+            loggedIn={loggedIn}
+          />} />
           <Route path="/sign-in" element={<Login
             onSubmit={login} />} />
           <Route path="/sign-up" element={<Register

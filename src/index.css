@@ -8,6 +8,7 @@
 @import url(./blocks/header/header.css);
 @import url(./blocks/header/__button/header__button.css);
 @import url(./blocks/header/__button/_green/header__button_green.css);
+@import url(./blocks/header/__button/_hide/header__button_hide.css);
 @import url(./blocks/header/__menu-icon/header__menu-icon.css);
 @import url(./blocks/header/__menu-button/header__menu-button.css);
 @import url(./blocks/header/__account/header__account.css);
@@ -118,3 +119,10 @@
 @import url(./blocks/filter/__button/filter__button.css);
 @import url(./blocks/filter/__button/_active/filter__button_active.css);
 @import url(./blocks/filter/__slider/filter__slider.css);
+
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/__body/popup__body.css);
+@import url(./blocks/popup/_is-opened/popup_is-opened.css);
+@import url(./blocks/popup/__close-button/popup__close-button.css);
+@import url(./blocks/popup/__link/popup__link.css);
+@import url(./blocks/popup/__link/_underline/popup__link_underline.css);
