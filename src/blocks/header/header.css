@@ -1,8 +1,14 @@
 .header {
-    width: 100%;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     padding: 18px 70px;
     box-sizing: border-box;
+}
+
+@media screen and (max-width:768px) {
+    .header {
+        padding: 18px 30px;
+       
+    }
 }

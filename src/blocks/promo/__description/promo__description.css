@@ -4,3 +4,9 @@
     gap: 36px;
     max-width: 640px;
 }
+
+@media screen and (max-width:768px) {
+    .promo__description {
+        gap: 20px;
+    }
+}

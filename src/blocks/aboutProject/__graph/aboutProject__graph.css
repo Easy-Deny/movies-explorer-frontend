@@ -6,3 +6,10 @@
     gap:16px 0px;
     grid-template-columns: 1fr 4fr;
 }
+
+@media screen and (max-width:768px) {
+    .aboutProject__graph {
+        padding-top: 94px;
+        padding-bottom: 90px;
+    }
+}

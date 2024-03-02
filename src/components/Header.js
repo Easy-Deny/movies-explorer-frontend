@@ -21,7 +21,7 @@ function Header(props) {
                     </div>
                 </Link>
             </div>
-            <button className="header__button header__menu-button">
+            <button className="header__button header__menu-button" style={{ display: (props.loggedIn ? 'inline-flex' : 'none') }}>
                 <div className="header__menu-icon"></div>
                 <div className="header__menu-icon"></div>
                 <div className="header__menu-icon"></div>

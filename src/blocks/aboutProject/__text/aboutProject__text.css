@@ -6,3 +6,10 @@
     text-align: left;
     width: 48%;
 }
+
+@media screen and (max-width:768px) {
+    .aboutProject__text {
+        font-size: 12px;
+        line-height: 18px;   
+    }
+}

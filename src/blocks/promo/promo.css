@@ -4,3 +4,12 @@
     font-family: Inter;
     color:  #FFFFFF;
 }
+
+@media screen and (max-width:768px) {
+    .promo {
+        padding-top: 140px;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 77px;
+    }
+}
