@@ -21,11 +21,11 @@ function Register(props) {
                 <input className="auth__input" name="password" type="password"
                     placeholder="" required minLength="2" maxLength="200" value={props.password} />
                 <span className="auth__text auth__text_red">Error</span>
-                <button className="auth__button" title="Войти" type="submit">Зарегистрироваться</button>
+                <button className="auth__button hover-animation" title="Войти" type="submit">Зарегистрироваться</button>
             </form>
             <div className="auth__route">
                 <p className="auth__description">Уже зарегистрированы?</p>
-                <Link to="/sign-in" className="auth__link">Войти</Link>
+                <Link to="/sign-in" className="auth__link hover-animation">Войти</Link>
             </div>
         </article>
     );

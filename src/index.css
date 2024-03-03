@@ -128,3 +128,5 @@
 @import url(./blocks/popup/__link/_underline/popup__link_underline.css);
 
 @import url(./blocks/preloader/preloader.css);
+
+@import url(./blocks/hover-animation/hover-animation.css);

@@ -20,10 +20,10 @@ function Profile(props) {
                         placeholder="pochta@yandex.ru" required minLength="2" maxLength="200" value={props.email} />
                 </div>
                 <span className="profile__text auth__text_red">Error</span>
-                <button className="profile__button" title="Войти" type="submit">Редактировать</button>
+                <button className="profile__button hover-animation" title="Войти" type="submit">Редактировать</button>
             </form>
             
-            <button className="profile__button profile__button_red" title="Войти" type="submit" onClick={props.logout}>Выйти из аккаунта</button>
+            <button className="profile__button profile__button_red hover-animation" title="Выйти" type="submit" onClick={props.logout}>Выйти из аккаунта</button>
         </section>
         </article>
     );

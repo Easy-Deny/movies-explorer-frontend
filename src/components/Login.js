@@ -17,11 +17,11 @@ function Login(props) {
                 <input className="auth__input" name="password" type="password"
                     placeholder="" required minLength="2" maxLength="200" value={props.password} />
                 <span className="auth__text auth__text_red">Error</span>
-                <button className="auth__button" title="Войти" type="submit">Войти</button>
+                <button className="auth__button hover-animation" title="Войти" type="submit">Войти</button>
             </form>
             <div className="auth__route">
                 <p className="auth__description">Ещё не зарегистрированы?</p>
-                <Link to="/sign-up" className="auth__link">Регистрация</Link>
+                <Link to="/sign-up" className="auth__link hover-animation">Регистрация</Link>
             </div>
         </article>
     );
