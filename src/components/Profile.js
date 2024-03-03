@@ -3,8 +3,9 @@ import Header from './Header';
 
 function Profile(props) {
     return (
-        <article className="profile">
+        <article className='page'>
             <Header loggedIn={props.loggedIn} />
+            <section className="profile">
             <h2 className="profile__title">Привет, Виталий!</h2>
             <form className="profile__form" action="#" onSubmit={props.onSubmit}>
                 <div className="profile__form-block">
@@ -21,7 +22,9 @@ function Profile(props) {
                 <span className="profile__text auth__text_red">Error</span>
                 <button className="profile__button" title="Войти" type="submit">Редактировать</button>
             </form>
+            
             <button className="profile__button profile__button_red" title="Войти" type="submit" onClick={props.logout}>Выйти из аккаунта</button>
+        </section>
         </article>
     );
 }

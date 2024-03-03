@@ -11,6 +11,6 @@
 
 @media screen and (max-width:768px) {
     .header__account-button {
-        visibility: hidden;
+        display: none;
     }
 }

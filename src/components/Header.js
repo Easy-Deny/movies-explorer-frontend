@@ -47,7 +47,7 @@ function Header(props) {
                     </div>
                 </Link>
             </div>
-            <button className="header__button header__menu-button" style={{ display: (props.loggedIn ? 'inline-flex' : 'none') }} onClick={handleMenuClick}>
+            <button className={`header__button header__menu-button ${props.loggedIn ?'header__button_hide': ''}`} onClick={handleMenuClick}>
                 <div className="header__menu-icon"></div>
                 <div className="header__menu-icon"></div>
                 <div className="header__menu-icon"></div>
