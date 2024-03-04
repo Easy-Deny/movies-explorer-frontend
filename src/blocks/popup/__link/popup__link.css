@@ -1,13 +1,18 @@
 .popup__link {
     font-size: 18px;
     font-weight: 500;
-    line-height: 22px;
+    line-height: 20px;
     letter-spacing: 0px;
     text-align: center;
     color: #FFFFFF;
     background-color: transparent;
     border: none;
-    margin-top: 28px;
+    margin: 13px auto;
+    display: inline-block;
+    width: min-content;
+    white-space: nowrap;
+    padding: 0 0 3px 0;
+
 }
 
 .popup__link:hover{
