@@ -36,6 +36,7 @@ function App() {
   }
 
   return (
+    <html lang="ru">
     <div className="page">
       <BrowserRouter>
         <Routes>
@@ -63,6 +64,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
+    </html>
   );
 }
 export default App;
