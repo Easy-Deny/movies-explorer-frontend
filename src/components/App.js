@@ -10,8 +10,14 @@ import Movies from './Movies';
 import SavedMovies from './SavedMovies';
 
 
+
 function App() {
   const [loggedIn, setLoggedIn] = React.useState();
+
+
+  function goBack() {
+    window.history.back()
+  }
 
   function logout() {
     localStorage.removeItem('loggedIn');
@@ -51,7 +57,9 @@ function App() {
           <Route path="/saved-movies" element={<SavedMovies
             cards={cards}
             loggedIn={loggedIn} />} />
-          <Route path='*' element={<Page404 />} />
+          <Route path='*' element={<Page404
+            onClick={goBack}
+          />} />
         </Routes>
       </BrowserRouter>
     </div>
