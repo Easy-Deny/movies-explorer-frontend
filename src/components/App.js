@@ -36,34 +36,36 @@ function App() {
   }
 
   return (
-    <html lang="ru" className="page">
-    <div className="page__body">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Main
-            loggedIn={loggedIn}
-          />} />
-          <Route path="/sign-in" element={<Login
-            onSubmit={login} />} />
-          <Route path="/sign-up" element={<Register
-            onSubmit={registration} />} />
-          <Route path="/profile" element={<Profile
-            loggedIn={loggedIn}
-            onSubmit={login}
-            logout={logout}
-          />} />
-          <Route path="/movies" element={<Movies
-            cards={cards}
-            loggedIn={loggedIn} />} />
-          <Route path="/saved-movies" element={<SavedMovies
-            cards={cards}
-            loggedIn={loggedIn} />} />
-          <Route path='*' element={<Page404
-            onClick={goBack}
-          />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <html lang="ru">
+      <div className="page">
+        <div className="page__body">
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Main
+                loggedIn={loggedIn}
+              />} />
+              <Route path="/sign-in" element={<Login
+                onSubmit={login} />} />
+              <Route path="/sign-up" element={<Register
+                onSubmit={registration} />} />
+              <Route path="/profile" element={<Profile
+                loggedIn={loggedIn}
+                onSubmit={login}
+                logout={logout}
+              />} />
+              <Route path="/movies" element={<Movies
+                cards={cards}
+                loggedIn={loggedIn} />} />
+              <Route path="/saved-movies" element={<SavedMovies
+                cards={cards}
+                loggedIn={loggedIn} />} />
+              <Route path='*' element={<Page404
+                onClick={goBack}
+              />} />
+            </Routes>
+          </BrowserRouter>
+        </div>
+      </div>
     </html>
   );
 }

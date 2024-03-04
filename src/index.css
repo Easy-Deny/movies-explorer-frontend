@@ -17,6 +17,8 @@
 @import url(./blocks/header/__account-button-text/header__account-button-text.css);
 @import url(./blocks/header/__account-logo/header__account-logo.css);
 @import url(./blocks/header/__account-icon/header__account-icon.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/header/__logo-icon/page__logo-icon.css);
 
 @import url(./blocks/navigation/navigation.css);
 

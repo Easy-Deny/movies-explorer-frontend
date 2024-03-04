@@ -32,8 +32,8 @@ function Header(props) {
     }
     return (
         <header className="header" style={{ background: (props.greenTheme ? '#073042' : 'none') }}>
-            <Link to="/" className="page__logo hover-animation">
-                <img className="page__logo-icon" src={logo} alt="Логотип" />
+            <Link to="/" className="header__logo hover-animation">
+                <img className="header__logo-icon" src={logo} alt="Логотип" />
             </Link>
             <Navigation
                 loggedIn={props.loggedIn} />
