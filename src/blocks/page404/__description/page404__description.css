@@ -4,9 +4,10 @@
     letter-spacing: 0em;
     text-align: center;
 }
-@media screen and (max-width:768px) {
-    .page404__link {
-        margin-top: 24%;
-        margin-left: 10px;
+
+@media screen and (max-width:320px) {
+    .page404__description {
+        font-size: 12px;
+        line-height: 15px;
     }
 }

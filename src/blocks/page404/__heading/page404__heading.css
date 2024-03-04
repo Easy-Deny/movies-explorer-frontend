@@ -10,7 +10,14 @@
 @media screen and (max-width:768px) {
     .page404__heading {
         margin-top: 53%;
-        font-family: Inter;
+    }
+}
 
+@media screen and (max-width:320px) {
+    .page404__heading {
+        margin-top: 103%;
+        font-size: 80px;
+        line-height: 97px;
+        margin-bottom: 10px;
     }
 }

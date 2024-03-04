@@ -16,3 +16,11 @@
         margin-top: 24%;
     }
 }
+
+@media screen and (max-width:320px) {
+    .page404__link {
+        margin-top: 89%;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
