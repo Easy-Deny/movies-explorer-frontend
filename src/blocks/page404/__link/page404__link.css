@@ -10,3 +10,9 @@
     background-color: transparent;
     border: none;
 }
+
+@media screen and (max-width:768px) {
+    .page404__link {
+        margin-top: 24%;
+    }
+}

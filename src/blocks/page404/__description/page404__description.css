@@ -4,3 +4,9 @@
     letter-spacing: 0em;
     text-align: center;
 }
+@media screen and (max-width:768px) {
+    .page404__link {
+        margin-top: 24%;
+        margin-left: 10px;
+    }
+}

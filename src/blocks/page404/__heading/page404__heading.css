@@ -6,3 +6,11 @@
     margin-top: 19.21%;
     margin-bottom: 5px;
 }
+
+@media screen and (max-width:768px) {
+    .page404__heading {
+        margin-top: 53%;
+        font-family: Inter;
+
+    }
+}
