@@ -37,7 +37,7 @@ function App() {
 
   return (
     <html lang="ru" className="page">
-    <div>
+    <div className="page__body">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main
