@@ -10,6 +10,8 @@
 @media screen and (max-width:768px) {
     .promo__heading {
         font-size: 40px;
+        font-size: 5.2vw;
+        max-width: 100%;
         line-height: 50px;
         text-align: center;
         margin-top: 49px;

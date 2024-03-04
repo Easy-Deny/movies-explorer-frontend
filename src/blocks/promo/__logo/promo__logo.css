@@ -4,6 +4,7 @@
 @media screen and (max-width:768px) {
     .promo__logo {
         align-self: center;
+        max-width: 50%;
     }
 }
 

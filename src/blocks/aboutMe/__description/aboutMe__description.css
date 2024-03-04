@@ -15,7 +15,7 @@
     }
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width:466px) {
     .aboutMe__description {
        display: flex;
        flex-direction: column;
