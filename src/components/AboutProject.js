@@ -2,7 +2,7 @@ import Heading from "./Heading";
 
 function AboutProject() {
     return (
-        <article className="aboutProject">
+        <article className="aboutProject" id='aboutProject'>
             <Heading
                 heading={'О проекте'} />
             <section className="aboutProject__section">

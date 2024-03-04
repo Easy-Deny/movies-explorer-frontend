@@ -10,7 +10,7 @@ function Promo() {
                 </div>
                 <img className="promo__logo" src={promoLogo} alt='Логотип' />
             </section>
-            <a className='promo__button hover-animation' href="https://code.s3.yandex.net/web-developer/static/new-program/web-diploma-criteria-2.0/checklist_jsx_diplom.pdf" rel='noreferrer' target ='_blank'>Узнать больше</a>
+            <a className='promo__button hover-animation' href="#aboutProject">Узнать больше</a>
         </article>
     );
 }
