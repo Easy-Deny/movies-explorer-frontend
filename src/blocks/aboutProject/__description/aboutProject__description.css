@@ -14,7 +14,7 @@
     }
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width:460px) {
     .aboutProject__description {
         gap:15px;
     }
