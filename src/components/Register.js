@@ -7,7 +7,7 @@ function Register(props) {
             <Link to="/" className="page__logo">
                 <img className="page__logo-icon" src={logo} alt="Логотип" />
             </Link>
-            <h2 className="auth__title">Добро пожаловать!</h2>
+            <h1 className="auth__title">Добро пожаловать!</h1>
             <form className="auth__form" action="#" onSubmit={props.onSubmit}>
                 <p className="auth__text">Имя</p>
                 <input className="auth__input" name="name" type="name" placeholder=""

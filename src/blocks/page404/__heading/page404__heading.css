@@ -1,7 +1,8 @@
 .page404__heading {
     font-size: 140px;
     line-height: 169px;
-    letter-spacing: 0em;
+    font-weight: 400;
+    letter-spacing: 0.0em;
     text-align: center;
     margin-top: 19.21%;
     margin-bottom: 5px;

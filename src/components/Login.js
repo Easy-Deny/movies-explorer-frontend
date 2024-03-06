@@ -7,7 +7,7 @@ function Login(props) {
             <Link to="/" className="page__logo">
                 <img className="page__logo-icon" src={logo} alt="Логотип" />
             </Link>
-            <h2 className="auth__title">Рады видеть!</h2>
+            <h1 className="auth__title">Рады видеть!</h1>
             <form className="auth__form" action="#" onSubmit={props.onSubmit}>
                 <p className="auth__text">E-mail</p>
                 <input className="auth__input" name="email" type="email" placeholder=""
