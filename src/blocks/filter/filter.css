@@ -1,18 +1,22 @@
-.filter{
+.filter {
     margin-top: 32px;
     display: flex;
     flex-wrap: nowrap;
     gap: 14px;
     justify-content: left;
 }
+
 @media screen and (max-width:768px) {
     .filter {
-       justify-content: right;
-       margin: 1px 30px 5px;
+        margin-top: 28px;
+        justify-content: right;
+        margin: 1px 30px 5px;
     }
 }
+
 @media screen and (max-width:320px) {
     .filter {
-       justify-content: center;
+        margin-top: 39px;
+        justify-content: center;
     }
 }
