@@ -1,6 +1,6 @@
 function Heading(props) {
     return (
-            <p className="heading">{props.heading}</p>
+            <h2 className="heading">{props.heading}</h2>
     );
 }
 export default Heading;

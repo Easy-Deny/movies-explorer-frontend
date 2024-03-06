@@ -7,19 +7,21 @@ import Portfolio from './Portfolio';
 import Footer from './Footer';
 
 function Main(props) {
-    return (
-      <main className="App">
-        <Header
-          loggedIn={props.loggedIn}
-          greenTheme={true}
-        />
-        <Promo/>
-        <AboutProject/>
-        <Techs/>
-        <AboutMe/>
-        <Portfolio/>
-        <Footer/>
+  return (
+    <div>
+      <Header
+        loggedIn={props.loggedIn}
+        greenTheme={true}
+      />
+      <main>
+        <Promo />
+        <AboutProject />
+        <Techs />
+        <AboutMe />
+        <Portfolio />
       </main>
-    );
-  }
-  export default Main;
+      <Footer />
+    </div>
+  );
+}
+export default Main;
