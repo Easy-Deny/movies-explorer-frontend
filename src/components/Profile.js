@@ -6,7 +6,7 @@ function Profile(props) {
         <article className='page'>
             <Header loggedIn={props.loggedIn} />
             <section className="profile">
-            <h2 className="profile__title">Привет, Виталий!</h2>
+            <h1 className="profile__title">Привет, Виталий!</h1>
             <form className="profile__form" action="#" onSubmit={props.onSubmit}>
                 <div className="profile__form-block">
                     <p className="profile__text">Имя</p>
