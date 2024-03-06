@@ -1,5 +1,5 @@
 .search{
-    padding: 70px 70px 32px;
+    padding: 70px 70px 0px;
 }
 @media screen and (max-width:768px) {
     .search {

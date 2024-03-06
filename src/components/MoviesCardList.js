@@ -1,10 +1,9 @@
-import FilterCheckbox from './FilterCheckbox';
 import MoviesCard from './MoviesCard';
 
 export function MoviesCardList(props) {
     return (
         <article className="cards">
-            <FilterCheckbox/>
+            
             <section className="cards__list">
             {props.cards.map((card) => {
                 return <MoviesCard
