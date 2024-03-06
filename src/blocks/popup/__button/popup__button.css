@@ -8,6 +8,7 @@
     border: none;
     border-radius: 40px;
     gap: 7px;
+    text-decoration: none;
 }
 
 @media screen and (max-width:320px) {
