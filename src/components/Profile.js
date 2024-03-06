@@ -13,13 +13,13 @@ function Profile(props) {
                     <input className="profile__input" name="name" type="name" placeholder="Имя"
                         required minLength="2" maxLength="40" value={props.name} />
                 </div>
-                <span className="profile__text auth__text_red">Error</span>
+                <span className="profile__text profile__text_red">Error</span>
                 <div className="profile__form-block">
                     <p className="profile__text">E-mail</p>
                     <input className="profile__input" name="email" type="email"
                         placeholder="email" required minLength="2" maxLength="200" value={props.email} />
                 </div>
-                <span className="profile__text auth__text_red">Error</span>
+                <span className="profile__text profile__text_red">Error</span>
                 <button className="profile__button hover-animation" title="Войти" type="submit">Редактировать</button>
             </form>
             

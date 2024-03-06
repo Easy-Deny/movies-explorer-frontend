@@ -9,9 +9,10 @@
 @media screen and (max-width:768px) {
     .auth {
         padding-top: 232px;
+      
     }
 }
-@media screen and (max-width:320px) {
+@media screen and (max-width:430px) {
     .auth {
         padding-top: 56px;
         align-items: center;

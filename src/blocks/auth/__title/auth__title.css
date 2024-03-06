@@ -14,7 +14,7 @@
     }
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width:430px) {
     .auth__title {
         text-align: center;
         margin: 50px 0 80px 0;

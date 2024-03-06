@@ -11,6 +11,7 @@
     padding: 0;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 @media screen and (max-width:768px) {
     .techs__technologies {

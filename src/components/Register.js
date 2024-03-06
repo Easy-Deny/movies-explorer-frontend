@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Register(props) {
     return (
-        <article className="auth">
+        <main className="auth">
             <Link to="/" className="page__logo">
                 <img className="page__logo-icon" src={logo} alt="Логотип" />
             </Link>
@@ -27,7 +27,7 @@ function Register(props) {
                 <p className="auth__description">Уже зарегистрированы?</p>
                 <Link to="/sign-in" className="auth__link hover-animation">Войти</Link>
             </div>
-        </article>
+        </main>
     );
 }
 export default Register;

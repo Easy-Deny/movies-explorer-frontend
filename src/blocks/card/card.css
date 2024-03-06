@@ -16,9 +16,10 @@
         max-height: 257px;
     }
 }
-@media screen and (max-width:340px) {
+@media screen and (max-width:400px) {
     .card {
-        max-width: 300px;
+        width: 100%px;
         max-height: 235px;
+        align-self: center;
     }
 }
