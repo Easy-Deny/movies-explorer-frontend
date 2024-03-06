@@ -47,7 +47,7 @@ function Header(props) {
                     </div>
                 </Link>
             </div>
-            <button className={`header__button header__menu-button hover-animation ${props.loggedIn ?'header__button_hide': ''}`} onClick={handleMenuClick}>
+            <button className={`header__button header__menu-button hover-animation ${props.loggedIn ?'header__button_hide': ''}`} onClick={handleMenuClick} type="button">
                 <div className="header__menu-icon"></div>
                 <div className="header__menu-icon"></div>
                 <div className="header__menu-icon"></div>

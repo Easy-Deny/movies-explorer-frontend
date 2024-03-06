@@ -13,7 +13,7 @@ export function MoviesCardList(props) {
                 />
             })}
             </section>
-            <button className="cards__button hover-animation">Ещё</button>
+            <button className="cards__button hover-animation" type="button">Ещё</button>
         </article>
     );
 }
