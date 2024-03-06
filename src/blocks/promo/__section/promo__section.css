@@ -5,9 +5,16 @@
     justify-content: space-between;
     margin-bottom: 92px;
 }
-@media screen and (max-width:768px) {
+@media screen and (max-width:1092px) {
     .promo__section {
         flex-direction: column-reverse;
+        margin-bottom: 20px;
+        margin-top: 20px;
         margin-bottom: 0px;
+    }
+}
+@media screen and (max-width:320px) {
+    .promo__section {
+      
     }
 }

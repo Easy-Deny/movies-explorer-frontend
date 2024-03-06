@@ -5,10 +5,20 @@
 
 .portfolio__table-string:last-child {
     border-bottom: none;
+    line-height: 87px;
 }
 
+@media screen and (max-width:768px) {
+    .portfolio__table-string {
+        line-height: 86px;
+    }
+}
 @media screen and (max-width:320px) {
     .portfolio__table-string {
+        line-height: 65px;
+    }
+    .portfolio__table-string:last-child {
+        border-bottom: none;
         line-height: 65px;
     }
 }

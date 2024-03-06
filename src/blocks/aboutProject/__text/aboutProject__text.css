@@ -4,7 +4,8 @@
     line-height: 20px;
     letter-spacing: 0em;
     text-align: left;
-    width: 48%;
+    width: 100%;
+    min-width: 150px;
 }
 
 @media screen and (max-width:768px) {
@@ -19,8 +20,5 @@
         font-size: 11px;
         line-height: 16px;
         width: 100%;
-    }
-    .aboutProject__text:last-of-type{
-        order: 10;
     }
 }

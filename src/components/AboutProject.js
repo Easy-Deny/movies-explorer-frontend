@@ -6,12 +6,16 @@ function AboutProject() {
             <Heading
                 heading={'О проекте'} />
             <section className="aboutProject__section">
+                <div className="aboutProject__table">
                 <ul className="aboutProject__description">
                     <li className="aboutProject__text aboutProject__heading">Дипломный проект включал 5 этапов</li>
+                    <li className="aboutProject__text ">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</li>
+                </ul>
+                <ul className="aboutProject__description">
                     <li className="aboutProject__text aboutProject__heading">На выполнение диплома ушло 5 недель</li>
-                    <li className="aboutProject__text">Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</li>
                     <li className="aboutProject__text">У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</li>
                 </ul>
+                </div>
                 <ul className="aboutProject__graph">
                     <li className="aboutProject__graphText aboutProject__period aboutProject__period_green" >1 неделя</li>
                     <li className="aboutProject__graphText aboutProject__period">4 недели</li>

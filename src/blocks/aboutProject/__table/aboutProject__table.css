@@ -1,0 +1,17 @@
+.aboutProject__table{
+    display: flex;
+    gap:50px;
+}
+@media screen and (max-width:768px) {
+    .aboutProject__table {
+        gap:40px;
+       
+    }
+}
+
+@media screen and (max-width:320px) {
+    .aboutProject__table {
+        gap:17px;
+        flex-wrap: wrap;
+    }
+}

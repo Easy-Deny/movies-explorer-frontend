@@ -1,16 +1,17 @@
 .aboutProject__description{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     list-style-type: none;
     margin: 0;
     padding: 0;
-    gap:26px 40px;
+    gap:25px;
     justify-content: baseline;
+    
 }
 @media screen and (max-width:768px) {
     .aboutProject__description {
-        gap:23px 26px;
+        gap:23px;
     }
 }
 

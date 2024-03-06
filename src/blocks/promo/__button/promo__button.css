@@ -19,9 +19,12 @@
     cursor: pointer;
 }
 
+
+
+
 @media screen and (max-width:768px) {
     .promo__button {
-        margin: 92px auto 0 auto;
+        margin: 72px auto 0 auto;
         align-self: center;
         padding: 9px 19px;
     }
@@ -29,6 +32,6 @@
 
 @media screen and (max-width:320px) {
     .promo__button {
-margin-top: 80px;
+margin-top: 60px;
     }
 }

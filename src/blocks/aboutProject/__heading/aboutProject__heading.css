@@ -3,6 +3,7 @@
     line-height: 24px;
     letter-spacing: -0.04em;
     text-align: left;
+   
 }
 
 @media screen and (max-width:460px) {
@@ -12,7 +13,5 @@
         width: 100%;
         margin-top: 40px;
     }
-    .aboutProject__heading:nth-of-type(2){
-        order: 3;
-    }
+    
 }

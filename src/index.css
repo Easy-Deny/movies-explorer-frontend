@@ -42,6 +42,7 @@
 @import url(./blocks/aboutProject/__period/aboutProject__period.css);
 @import url(./blocks/aboutProject/__period/_green/aboutProject__period_green.css);
 @import url(./blocks/aboutProject/__signature/aboutProject__signature.css);
+@import url(./blocks/aboutProject/__table/aboutProject__table.css);
 
 @import url(./blocks/techs/techs.css);
 @import url(./blocks/techs/__section/techs__section.css);

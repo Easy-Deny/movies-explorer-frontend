@@ -9,8 +9,10 @@
 
 @media screen and (max-width:768px) {
     .aboutProject__graph {
-        padding-top: 94px;
-        padding-bottom: 90px;
+        padding-top: 92px;
+        padding-bottom: 91px;
+        grid-template-columns: 1.06fr 4fr;
+
     }
 }
 
