@@ -13,7 +13,10 @@ import SavedMovies from './SavedMovies';
 
 function App() {
   const [loggedIn, setLoggedIn] = React.useState();
-
+  
+  function goToUrl(url) {
+    window.open(url)
+  }
 
   function goBack() {
     window.history.back()
@@ -42,6 +45,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Main
                 loggedIn={loggedIn}
+                goToUrl={goToUrl}
               />} />
               <Route path="/sign-in" element={<Login
                 onSubmit={login} />} />

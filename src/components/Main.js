@@ -18,7 +18,8 @@ function Main(props) {
         <AboutProject />
         <Techs />
         <AboutMe />
-        <Portfolio />
+        <Portfolio 
+        goToUrl={props.goToUrl}/>
       </main>
       <Footer />
     </div>
