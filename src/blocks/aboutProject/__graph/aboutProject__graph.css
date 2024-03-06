@@ -4,7 +4,7 @@
     padding: 111px 0 111px 0;
     display: grid;
     gap:14px 0px;
-    grid-template-columns: 1.08fr 4fr;
+    grid-template-columns: 1fr 4fr;
 }
 
 @media screen and (max-width:768px) {
