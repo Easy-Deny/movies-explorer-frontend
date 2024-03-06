@@ -4,6 +4,7 @@
     line-height: 58px;
     letter-spacing: -0.04em;
     text-align: center;
+    margin: 0;
 }
 @media screen and (max-width:320px) {
     .techs__heading {
