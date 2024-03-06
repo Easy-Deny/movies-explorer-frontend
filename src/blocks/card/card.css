@@ -18,7 +18,7 @@
 }
 @media screen and (max-width:400px) {
     .card {
-        width: 100%px;
+        width: 100%;
         max-height: 235px;
         align-self: center;
     }

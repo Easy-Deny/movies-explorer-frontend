@@ -10,7 +10,7 @@ function Profile(props) {
             <form className="profile__form" action="#" onSubmit={props.onSubmit}>
                 <div className="profile__form-block">
                     <p className="profile__text">Имя</p>
-                    <input className="profile__input" name="name" type="name" placeholder="Имя"
+                    <input className="profile__input" name="name" type="text" placeholder="Имя"
                         required minLength="2" maxLength="40" value={props.name} />
                 </div>
                 <span className="profile__text profile__text_red">Error</span>
