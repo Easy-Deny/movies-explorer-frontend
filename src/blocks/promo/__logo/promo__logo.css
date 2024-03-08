@@ -1,0 +1,15 @@
+.promo__logo{
+    max-width: 310px;
+}
+@media screen and (max-width:768px) {
+    .promo__logo {
+        align-self: center;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .promo__logo {
+        max-width: 210px;
+    }
+}

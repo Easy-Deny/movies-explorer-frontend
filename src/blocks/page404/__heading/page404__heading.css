@@ -1,0 +1,24 @@
+.page404__heading {
+    font-size: 140px;
+    line-height: 169px;
+    font-weight: 400;
+    letter-spacing: 0.0em;
+    text-align: center;
+    margin-top: 19.21%;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width:768px) {
+    .page404__heading {
+        margin-top: 53%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .page404__heading {
+        margin-top: 103%;
+        font-size: 80px;
+        line-height: 97px;
+        margin-bottom: 10px;
+    }
+}

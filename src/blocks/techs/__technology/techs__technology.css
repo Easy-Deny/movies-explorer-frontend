@@ -1,0 +1,12 @@
+.techs__technology{
+    background-color: #303030;
+    padding: 21px 0;
+    border-radius: 10px;
+    min-width: 90px;
+    text-align: center;
+}
+@media screen and (max-width:768px) {
+    .techs__technology {
+        min-width: 84px;
+    }
+}

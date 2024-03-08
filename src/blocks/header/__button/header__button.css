@@ -1,0 +1,25 @@
+.header__button{
+    border: none;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-family: Inter;
+    letter-spacing: 0em;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.header__button:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width:320px) {
+    .header__button {
+        font-size: 10px;
+        line-height: 16px;  
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+}

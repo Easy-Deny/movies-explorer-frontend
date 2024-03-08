@@ -1,0 +1,14 @@
+.footer__text{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width:320px) {
+    .footer__text {
+        flex-direction: column-reverse;
+        margin: 30px auto 0 auto;
+        gap: 30px;
+    }
+}

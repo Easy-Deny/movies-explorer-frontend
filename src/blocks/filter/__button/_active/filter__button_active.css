@@ -1,0 +1,6 @@
+.filter__button_active{
+    background-color: #2BE080;
+    justify-content: right;
+    transition: opacity 500ms;
+}
+

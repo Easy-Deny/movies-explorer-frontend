@@ -1,0 +1,15 @@
+.promo__section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 92px;
+}
+@media screen and (max-width:1092px) {
+    .promo__section {
+        flex-direction: column-reverse;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+}

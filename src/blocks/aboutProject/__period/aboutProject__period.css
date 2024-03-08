@@ -1,0 +1,20 @@
+.aboutProject__period {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    background-color: #303030;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+
+
+@media screen and (max-width:320px) {
+    .aboutProject__period {
+        font-size: 11px;
+        line-height: 13px;
+        padding-top: 11px;
+        padding-bottom: 11px;
+    }
+}

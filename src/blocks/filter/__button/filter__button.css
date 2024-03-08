@@ -1,0 +1,20 @@
+.filter__button {
+    width: 36px;
+    height: 20px;
+    border: none;
+    background-color: #EBEBEB;
+    border-radius: 20px;
+    padding: 2px;
+    display: flex;
+    justify-content: left;
+}
+
+.filter__button:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+    .filter__button {
+       order: 2;
+    }
+}

@@ -1,0 +1,36 @@
+.promo__button {
+    padding: 10px 20px;
+    margin-top: 84px;
+    background-color: transparent;
+    border: 1px #FFFFFF solid;
+    border-radius: 3px;
+    color: #FFFFFF;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.promo__button:hover {
+    cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width:768px) {
+    .promo__button {
+        margin: 72px auto 0 auto;
+        align-self: center;
+        padding: 9px 19px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .promo__button {
+margin-top: 60px;
+    }
+}

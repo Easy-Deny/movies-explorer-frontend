@@ -1,0 +1,27 @@
+.popup__link {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: transparent;
+    border: none;
+    margin: 13px auto;
+    display: inline-block;
+    width: min-content;
+    white-space: nowrap;
+    padding: 0 0 3px 0;
+
+}
+
+.popup__link:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width:320px) {
+    .popup__link {
+        margin-top: 0;
+        line-height: 30px;
+    }
+}

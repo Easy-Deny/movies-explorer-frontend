@@ -1,0 +1,26 @@
+.aboutMe__description {
+    border-top: 1px #DADADA solid;
+    padding-top: 66px;
+    display: grid;
+    grid-template-areas: "name . avatar"
+        "profession . avatar"
+        "legend . avatar"
+        "link . avatar";
+    grid-template-columns: 2.2fr 1fr 1fr;
+}
+
+@media screen and (max-width:768px) {
+    .aboutMe__description {
+        grid-template-columns: 3.6fr 0.6fr 1fr;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width:660px) {
+    .aboutMe__description {
+       display: flex;
+       flex-direction: column;
+       padding-top: 60px;
+       gap: 20px;
+    }
+}

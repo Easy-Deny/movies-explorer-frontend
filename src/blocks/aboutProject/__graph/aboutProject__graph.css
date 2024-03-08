@@ -1,0 +1,26 @@
+.aboutProject__graph{
+    list-style-type: none;
+    margin: 0;
+    padding: 111px 0 111px 0;
+    display: grid;
+    gap:14px 0px;
+    grid-template-columns: 1fr 4fr;
+}
+
+@media screen and (max-width:768px) {
+    .aboutProject__graph {
+        padding-top: 92px;
+        padding-bottom: 91px;
+        grid-template-columns: 1.06fr 4fr;
+
+    }
+}
+
+@media screen and (max-width:460px) {
+    .aboutProject__graph {
+        padding-top: 60px;
+        padding-bottom: 70px;
+        grid-template-columns: 35% auto;
+        gap:10px 0px;
+    }
+}

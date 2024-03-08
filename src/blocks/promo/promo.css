@@ -1,0 +1,21 @@
+.promo{
+    background-color: #073042;
+    padding: 75px 70px 85px 70px;
+    font-family: Inter;
+    color:  #FFFFFF;
+}
+
+@media screen and (max-width:768px) {
+    .promo {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 77px;
+        padding: 120px 10% 77px 10%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .promo {
+        padding: 40px 10px 30px 10px;
+    }
+}

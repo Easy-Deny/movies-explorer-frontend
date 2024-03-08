@@ -1,0 +1,17 @@
+.aboutProject__heading {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+    text-align: left;
+   
+}
+
+@media screen and (max-width:460px) {
+    .aboutProject__heading {
+        font-size: 18px;
+        line-height: 22px;
+        width: 100%;
+        margin-top: 40px;
+    }
+    
+}

@@ -1,0 +1,23 @@
+.aboutMe__profession {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0px;
+    margin: 0;
+    grid-area: profession;
+    text-align: left;
+}
+
+@media screen and (max-width:768px) {
+    .aboutMe__profession {
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .aboutMe__profession {
+        font-size: 11px;
+        line-height: 16px;
+    }
+}

@@ -1,0 +1,11 @@
+.aboutProject__graphText{
+    text-align: center;
+}
+
+@media screen and (max-width:768px) {
+    .aboutProject__graphText {
+        font-size: 14px;
+        line-height: 17px;   
+    }
+}
+

@@ -1,0 +1,21 @@
+.cards__button {
+    background-color: transparent;
+    border: 1px #424242 solid;
+    border-radius: 6px;
+    margin-top: 49px;
+    margin-bottom: 80px;
+    align-self: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 10px 147px;
+}
+
+@media screen and (max-width:320px) {
+    .cards__button {
+        padding: 10px 107px;
+    }
+}

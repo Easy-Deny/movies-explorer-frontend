@@ -1,0 +1,18 @@
+.techs__section {
+    border-top: 1px #DADADA solid;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media screen and (max-width:768px) {
+    .techs__section {
+        padding-top: 80px;
+    }
+}
+@media screen and (max-width:320px) {
+    .techs__section {
+        border-top: 1px  #000000 solid;
+        padding-top: 62px;
+    }
+}
