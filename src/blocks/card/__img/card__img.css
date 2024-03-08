@@ -2,7 +2,7 @@
     width: 100%;
     object-position: center;
     object-fit: cover;
-    max-height: 151px;
+    height: 151px;
 }
 @media screen and (max-width:768px) {
     .card__img {

@@ -1,6 +1,6 @@
 .card__description{
     margin: 14px 12px 0 12px;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-between;
 }

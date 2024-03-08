@@ -5,15 +5,17 @@ import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import Register from './Register';
 import Profile from './Profile';
-import cards from '../temp/cardList';
+//import cards from '../temp/cardList';
 import Movies from './Movies';
 import SavedMovies from './SavedMovies';
+import { movieApi } from '../utils/MoviesApi';
 
 
 
 function App() {
   const [loggedIn, setLoggedIn] = React.useState();
-  
+  const [cards, setCards] = React.useState([]);
+
   function goToUrl(url) {
     window.open(url)
   }
@@ -37,38 +39,51 @@ function App() {
     e.preventDefault();
     window.location.assign('/sign-in');
   }
+  function getAllMovies() {
+    movieApi.getAllMovies()
+      .then((data) => {
+        console.log(data);
+        setCards(data)
+      })
+      .catch((err) => { console.log(`не удалось обновить карточки, Ошибка: ${err}`) })
+  }
+
+  React.useEffect(() => {
+    getAllMovies()
+  },
+    [])
 
   return (
-      <div className="page">
-        <div className="page__body">
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Main
-                loggedIn={loggedIn}
-                goToUrl={goToUrl}
-              />} />
-              <Route path="/sign-in" element={<Login
-                onSubmit={login} />} />
-              <Route path="/sign-up" element={<Register
-                onSubmit={registration} />} />
-              <Route path="/profile" element={<Profile
-                loggedIn={loggedIn}
-                onSubmit={login}
-                logout={logout}
-              />} />
-              <Route path="/movies" element={<Movies
-                cards={cards}
-                loggedIn={loggedIn} />} />
-              <Route path="/saved-movies" element={<SavedMovies
-                cards={cards}
-                loggedIn={loggedIn} />} />
-              <Route path='*' element={<Page404
-                onClick={goBack}
-              />} />
-            </Routes>
-          </BrowserRouter>
-        </div>
+    <div className="page">
+      <div className="page__body">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Main
+              loggedIn={loggedIn}
+              goToUrl={goToUrl}
+            />} />
+            <Route path="/sign-in" element={<Login
+              onSubmit={login} />} />
+            <Route path="/sign-up" element={<Register
+              onSubmit={registration} />} />
+            <Route path="/profile" element={<Profile
+              loggedIn={loggedIn}
+              onSubmit={login}
+              logout={logout}
+            />} />
+            <Route path="/movies" element={<Movies
+              cards={cards}
+              loggedIn={loggedIn} />} />
+            <Route path="/saved-movies" element={<SavedMovies
+              cards={cards}
+              loggedIn={loggedIn} />} />
+            <Route path='*' element={<Page404
+              onClick={goBack}
+            />} />
+          </Routes>
+        </BrowserRouter>
       </div>
+    </div>
   );
 }
 export default App;
