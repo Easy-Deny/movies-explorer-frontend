@@ -2,7 +2,7 @@ import Login from './Login';
 import Main from './Main';
 import Page404 from './Page404';
 import React from 'react';
-import { Route, Routes, BrowserRouter, useNavigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Register from './Register';
 import Profile from './Profile';
 //import cards from '../temp/cardList';
@@ -12,7 +12,7 @@ import { movieApi } from '../utils/MoviesApi';
 import { mainApi } from '../utils/MainApi';
 import DevTool from './DevTool';
 
-
+export const CurrentUserContext = React.createContext();
 
 
 
@@ -20,19 +20,15 @@ import DevTool from './DevTool';
 function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [cards, setCards] = React.useState([]);
-  const [userData, setUserData] = React.useState();
   const token = localStorage.getItem('token');
-  const CurrentUserContext = React.createContext();
-  const [currentUser, setCurrentUser] = React.useState({});
-  
 
+  const [currentUser, setCurrentUser] = React.useState(() => JSON.parse(localStorage.getItem('currentUser')));
 
   function login(formValue, setFormValue) {
     mainApi.login(formValue.email, formValue.password)
       .then((data) => {
-        setCurrentUser(data)
-        console.log(data);
         if (data) {
+          setCurrentUser({ name: data.name, email: data.email })
           setFormValue({ email: '', password: '' });
           window.location.assign('/');
         }
@@ -51,32 +47,46 @@ function App() {
       .catch(err => console.log(err));
   }
 
+  function editProfile({
+    name,
+    email,
+  }) {
+
+    mainApi.editProfile({ name, email })
+      .then((data) => {
+        setCurrentUser({ name: data.name, email: data.email });
+        localStorage.setItem('currentUser', JSON.stringify({name: data.name, email: data.email}));
+      })
+      .then((data) => { console.log(data) })
+      .catch((err) => { console.log(`не удалось сохранить новый профиль, Ошибка: ${err}`) })
+  }
+
   function handleLogout() {
     setLoggedIn(false);
     localStorage.removeItem('token');
+    localStorage.removeItem('currentUser');
     goLogin();
   }
 
-  function tokenCheck() {
-    
-    //console.log(token)
-    if (token) {
-      mainApi.checkToken(token)
-        .then((res) => {
-          if (res) {
-            var userData = {
-              email: res.email
-            }
-            console.log(userData)
-            setLoggedIn(true);
-            setUserData(userData)
-            window.location.assign('/');
-            //navigate("/", { replace: true })
-          }
-        })
-        .catch((err) => console.log(err));
-    }
-  }
+  // function tokenCheck() {
+
+
+  //   if (token) {
+  //     mainApi.checkToken(token)
+  //       .then((res) => {
+  //         if (res) {
+  //           var userData = {
+  //             email: res.email
+  //           }
+  //           console.log(userData)
+  //           setLoggedIn(true);
+  //           window.location.assign('/');
+  //           //navigate("/", { replace: true })
+  //         }
+  //       })
+  //       .catch((err) => console.log(err));
+  //   }
+  // }
 
   function goToUrl(url) {
     window.open(url)
@@ -90,9 +100,6 @@ function App() {
     window.location.assign('/sign-in')
   }
 
-  function goRegistration() {
-    window.location.assign('/sign-up')
-}
 
   function getAllMovies() {
     movieApi.getAllMovies()
@@ -111,9 +118,9 @@ function App() {
     <div className="page">
       <div className="page__body">
         <DevTool
-        loggedIn={loggedIn}
-        currentUser={currentUser}
-        token={token}
+          loggedIn={loggedIn}
+          currentUser={currentUser}
+          token={token}
         />
         <CurrentUserContext.Provider value={currentUser}>
           <Routes>
@@ -125,13 +132,14 @@ function App() {
             <Route path="/sign-in" element={<Login
               login={login}
               currentUser={currentUser}
-               />} />
+            />} />
             <Route path="/sign-up" element={<Register
               registration={registration} />} />
             <Route path="/profile" element={<Profile
               loggedIn={loggedIn}
               onSubmit={login}
               handleLogout={handleLogout}
+              editProfile={editProfile}
               currentUser={currentUser}
             />} />
             <Route path="/movies" element={<Movies

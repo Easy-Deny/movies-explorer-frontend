@@ -4,11 +4,11 @@ import React from 'react';
 
 
 function Login(props) {
-
     const [formValue, setFormValue] = React.useState({
         email: '',
         password: ''
     })
+
     const handleChange = (e) => {
         const { name, value } = e.target;
 
@@ -24,7 +24,6 @@ function Login(props) {
             return;
         }
         props.login(formValue, setFormValue)
-        .then((data)=>{props.currentUser=data});
     }
 
     return (

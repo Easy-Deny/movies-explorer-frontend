@@ -30,6 +30,7 @@ class MainApi {
     }
 
     login(email, password) {
+        //console.log({email, password})
         return fetch(`${this.url}/signin`, {
             method: 'POST',
             headers: {
@@ -41,14 +42,24 @@ class MainApi {
         })
             .then((res => this.checkServerStatus(res)))
             .then((data) => {
-                console.log(data);
+                //console.log(data);
                 if (data.token) {
                     localStorage.setItem('token', data.token);
-                    
+                    localStorage.setItem('currentUser', JSON.stringify({ name: data.name, email: data.email }));
                     return data;
                 }
             })
     };
+
+    editProfile({name , email}) {
+        return fetch(`${this.url}/users/me`, {
+            method: 'PATCH',
+            headers: this.headers,
+            body: JSON.stringify({ name, email})
+        })
+            .then((res) => { return this.checkServerStatus(res) })
+    }
+
     checkServerStatus(res) {
         if (res.ok) {
             return res.json()

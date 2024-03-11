@@ -1,29 +1,39 @@
 import Header from './Header';
 import React from 'react';
+//import CurrentUserContext from './App';
 
 function Profile(props) {
-    
+    // const currentUser = React.useContext(CurrentUserContext)
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const [name, setName] = React.useState('');
     const [email, setEmail] = React.useState('');
 
     function handleChangeName(e) {
-       // setName(e.target.value);
+        setName(e.target.value);
     }
     function handleChangeEmail(e) {
-        //setEmail(e.target.value);
+        setEmail(e.target.value);
+    }
+    function handleEditProfile(e) {
+        e.preventDefault();
+        props.editProfile({
+            name,
+            email
+        });
     }
 
-   // React.useEffect(() => {
-       // setName(props.currentUser.name);
-       // setEmail(props.currentUser.email);
-  //  }, [props.currentUser]);
+
+    React.useEffect(() => {
+        setName(currentUser.name);
+        setEmail(currentUser.email);
+    }, []);
 
     return (
         <article className='page'>
             <Header token={props.token} />
             <section className="profile">
-                <h1 className="profile__title">Привет, Виталий!</h1>
-                <form className="profile__form" action="#" onSubmit={props.onSubmit}>
+                <h1 className="profile__title">{`Привет, ${currentUser.name}!`}</h1>
+                <form className="profile__form" action="#" onSubmit={handleEditProfile}>
                     <div className="profile__form-block">
                         <p className="profile__text">Имя</p>
                         <input className="profile__input" name="name" type="text" placeholder="Имя"
