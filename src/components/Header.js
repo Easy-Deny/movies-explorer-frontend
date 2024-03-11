@@ -36,18 +36,20 @@ function Header(props) {
                 <img className="header__logo-icon" src={logo} alt="Логотип" />
             </Link>
             <Navigation
-                loggedIn={props.loggedIn} />
+                loggedIn={props.loggedIn}
+                token={props.token}
+                 />
             <div className="header__account">
-                <Link to="/sign-up" className={`header__button hover-animation ${!props.loggedIn ?'header__button_hide': ''}`}>Регистрация</Link>
-                <Link to="/sign-in" className={`header__button header__button_green hover-animation ${!props.loggedIn ?'header__button_hide': ''}`}>Войти</Link>
-                <Link to="/profile" className={`header__button header__account-button hover-animation ${props.loggedIn ?'header__button_hide': ''}`}>
+                <Link to="/sign-up" className={`header__button hover-animation ${props.token === null ? '' : 'header__button_hide'}`}>Регистрация</Link>
+                <Link to="/sign-in" className={`header__button header__button_green hover-animation ${props.token  === null ? '' : 'header__button_hide'}`}>Войти</Link>
+                <Link to="/profile" className={`header__button header__account-button hover-animation ${props.token === null? 'header__account-button_hide': ''}`}>
                     <p className="header__account-button-text">Аккаунт</p>
                     <div className="header__account-logo">
                         <img className="header__account-icon" src={accountIcon} alt="Аккаунт" />
                     </div>
                 </Link>
             </div>
-            <button className={`header__button header__menu-button hover-animation ${props.loggedIn ?'header__button_hide': ''}`} onClick={handleMenuClick} type="button">
+            <button className={`header__button header__menu-button hover-animation ${props.token === null ? 'header__menu-button_hide' : ''}`} onClick={handleMenuClick} type="button">
                 <span className="header__menu-icon"></span>
                 <span className="header__menu-icon"></span>
                 <span className="header__menu-icon"></span>
@@ -59,6 +61,7 @@ function Header(props) {
             goMovies={handleGoMovies}
             goSavedMovies={handleGoSavedMovies}
             loggedIn={props.loggedIn}
+            token={props.token}
             location={location}/>
         </header>
   

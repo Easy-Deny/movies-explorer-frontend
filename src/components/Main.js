@@ -12,6 +12,7 @@ function Main(props) {
       <Header
         loggedIn={props.loggedIn}
         greenTheme={true}
+        token={props.token}
       />
       <main>
         <Promo />

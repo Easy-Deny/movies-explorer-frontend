@@ -2,6 +2,7 @@ function Portfolio(props) {
     return (
         <article className="portfolio">
             <p className="portfolio__title">Портфолио</p>
+           
             <table className="portfolio__table">
                 <tr className="portfolio__table-string hover-animation" onClick={()=>props.goToUrl("https://easy-deny.github.io/russian-travel/")}>
                     <td className="portfolio__table-column">Статичный сайт</td>
@@ -16,7 +17,7 @@ function Portfolio(props) {
                     <td className="portfolio__table-column portfolio__link">↗</td>
                 </tr>
             </table>
-
+           
 
         </article>
     );
