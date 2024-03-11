@@ -3,8 +3,8 @@ import React from 'react';
 //import CurrentUserContext from './App';
 
 function Profile(props) {
-    // const currentUser = React.useContext(CurrentUserContext)
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+     //const currentUser = React.useContext(CurrentUserContext)
+     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const [name, setName] = React.useState('');
     const [email, setEmail] = React.useState('');
 

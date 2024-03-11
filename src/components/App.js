@@ -136,7 +136,6 @@ function App() {
             <Route path="/sign-up" element={<Register
               registration={registration} />} />
             <Route path="/profile" element={<Profile
-              loggedIn={loggedIn}
               onSubmit={login}
               handleLogout={handleLogout}
               editProfile={editProfile}
@@ -144,10 +143,10 @@ function App() {
             />} />
             <Route path="/movies" element={<Movies
               cards={cards}
-              loggedIn={loggedIn} />} />
+              token={token} />} />
             <Route path="/saved-movies" element={<SavedMovies
               cards={cards}
-              loggedIn={loggedIn} />} />
+              token={token} />} />
             <Route path='*' element={<Page404
               onClick={goBack}
             />} />
