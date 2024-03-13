@@ -3,15 +3,17 @@ import MoviesCard from './MoviesCard';
 export function MoviesCardList(props) {
     return (
         <article className="cards">
-            
+
             <section className="cards__list">
-            {props.cards.map((card) => {
-                return <MoviesCard
-                    key={card._id}
-                    card={card}
-                    markerTypeCircle={props.markerTypeCircle}
-                />
-            })}
+                {props.cards.map((card) => {
+                    return <MoviesCard
+                        key={card._id}
+                        card={card}
+                        markerTypeCircle={props.markerTypeCircle}
+                        handleAddLike={props.handleAddLike}
+                        handleDeleteLike={props.handleDeleteLike}
+                    />
+                })}
             </section>
             <button className="cards__button hover-animation" type="button">Ещё</button>
         </article>

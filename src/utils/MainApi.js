@@ -1,3 +1,5 @@
+import { MAIN_API } from "./const"
+
 class MainApi {
     constructor(props) {
         this.url = props.url
@@ -60,6 +62,30 @@ class MainApi {
             .then((res) => { return this.checkServerStatus(res) })
     }
 
+    getAllLikes() {
+        return fetch(`${this.url}/movies`, {
+            method: 'GET',
+            headers: this.headers,
+        })
+            .then((res) => { return this.checkServerStatus(res) })
+    }
+
+    addLike(card) {
+        return fetch(`${this.url}/movies`, {
+            method: 'POST',
+            headers: this.headers,
+            body: JSON.stringify(card)
+        })
+            .then((res) => { return this.checkServerStatus(res) })
+    }
+    deleteLike(id) {
+        return fetch(`${this.url}/movies/${id}`, {
+            method: 'DELETE',
+            headers: this.headers
+        })
+            .then((res) => { return this.checkServerStatus(res) })
+    }
+
     checkServerStatus(res) {
         if (res.ok) {
             return res.json()
@@ -69,7 +95,7 @@ class MainApi {
 }
 
 export const mainApi = new MainApi({
-    url: 'https://api.easydeny.nomoredomainswork.ru',
+    url: MAIN_API,
     //url: 'http://localhost:3500',
     headers: {
         'content-type': 'application/json',

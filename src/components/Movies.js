@@ -11,7 +11,10 @@ export function Movies(props) {
             <SearchForm/>
             <MoviesCardList
                 cards={props.cards}
-                markerTypeCircle={markerTypeCircle} />
+                markerTypeCircle={markerTypeCircle}
+                handleAddLike={props.handleAddLike}
+                handleDeleteLike={props.handleDeleteLike}
+                 />
             <Footer />
         </article>
     );

@@ -11,6 +11,7 @@ import SavedMovies from './SavedMovies';
 import { movieApi } from '../utils/MoviesApi';
 import { mainApi } from '../utils/MainApi';
 import DevTool from './DevTool';
+import { MOVIES_API } from '../utils/const';
 
 export const CurrentUserContext = React.createContext();
 
@@ -20,6 +21,7 @@ export const CurrentUserContext = React.createContext();
 function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [cards, setCards] = React.useState([]);
+  const [likedCards, setLikedCards] = React.useState([]);
   const token = localStorage.getItem('token');
 
   const [currentUser, setCurrentUser] = React.useState(() => JSON.parse(localStorage.getItem('currentUser')));
@@ -55,7 +57,7 @@ function App() {
     mainApi.editProfile({ name, email })
       .then((data) => {
         setCurrentUser({ name: data.name, email: data.email });
-        localStorage.setItem('currentUser', JSON.stringify({name: data.name, email: data.email}));
+        localStorage.setItem('currentUser', JSON.stringify({ name: data.name, email: data.email }));
       })
       .then((data) => { console.log(data) })
       .catch((err) => { console.log(`не удалось сохранить новый профиль, Ошибка: ${err}`) })
@@ -65,28 +67,9 @@ function App() {
     setLoggedIn(false);
     localStorage.removeItem('token');
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('search');
     goLogin();
   }
-
-  // function tokenCheck() {
-
-
-  //   if (token) {
-  //     mainApi.checkToken(token)
-  //       .then((res) => {
-  //         if (res) {
-  //           var userData = {
-  //             email: res.email
-  //           }
-  //           console.log(userData)
-  //           setLoggedIn(true);
-  //           window.location.assign('/');
-  //           //navigate("/", { replace: true })
-  //         }
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }
-  // }
 
   function goToUrl(url) {
     window.open(url)
@@ -109,8 +92,55 @@ function App() {
       .catch((err) => { console.log(`не удалось обновить карточки, Ошибка: ${err}`) })
   }
 
+  function getAllLikedCards() {
+    mainApi.getAllLikes()
+      .then((likedCards) => {
+        if (likedCards) {
+          setLikedCards(likedCards)
+        } else {
+          console.log('у вас нет добавленных фильмов')
+        }
+      })
+      .catch((err) => { console.log(`не удалось обновить карточки, Ошибка: ${err}`) })
+  }
+
+  function handleAddLike(card) {
+    mainApi.addLike({
+      country: card.country,
+      director: card.director,
+      duration: card.duration,
+      year: card.year,
+      description: card.description,
+      image: `${MOVIES_API}${card.image.url}`,
+      trailerLink: card.trailerLink,
+      thumbnail: `${MOVIES_API}${card.image.formats.thumbnail.url}`,
+      movieId: String(card.id),
+      nameRU: card.nameRU,
+      nameEN: card.nameEN,
+    })
+      .then((newCard) => {
+        console.log(newCard);
+        setLikedCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+      })
+      .catch((err) => { console.log(`не удалось поставить лайк, Ошибка: ${err}`) });
+  }
+
+  function handleDeleteLike(card) {
+    mainApi.deleteLike(card._id)
+      .then((newCard) => {
+        setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+      })
+      .catch((err) => { console.log(`не удалось убрать лайк, Ошибка: ${err}`) });
+  }
+
+
   React.useEffect(() => {
     getAllMovies()
+  },
+    [])
+
+  React.useEffect(() => {
+    getAllLikedCards()
   },
     [])
 
@@ -141,12 +171,19 @@ function App() {
               editProfile={editProfile}
               currentUser={currentUser}
             />} />
-            <Route path="/movies" element={<Movies
-              cards={cards}
-              token={token} />} />
-            <Route path="/saved-movies" element={<SavedMovies
-              cards={cards}
-              token={token} />} />
+            <Route path="/movies" element={
+              <Movies
+                cards={cards}
+                token={token}
+                handleAddLike={handleAddLike}
+                handleDeleteLike={handleDeleteLike}
+              />} />
+            <Route path="/saved-movies" element={
+              <SavedMovies
+                cards={likedCards}
+                token={token}
+                handleDeleteLike={handleDeleteLike}
+              />} />
             <Route path='*' element={<Page404
               onClick={goBack}
             />} />
