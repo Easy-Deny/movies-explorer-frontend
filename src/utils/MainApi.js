@@ -46,8 +46,7 @@ class MainApi {
             .then((data) => {
                 //console.log(data);
                 if (data.token) {
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('currentUser', JSON.stringify({ name: data.name, email: data.email }));
+                    
                     return data;
                 }
             })

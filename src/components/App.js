@@ -30,7 +30,9 @@ function App() {
     mainApi.login(formValue.email, formValue.password)
       .then((data) => {
         if (data) {
-          setCurrentUser({ name: data.name, email: data.email })
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('currentUser', JSON.stringify({ name: data.name, email: data.email, id: data._id }));
+          setCurrentUser({ name: data.name, email: data.email, id: data._id });
           setFormValue({ email: '', password: '' });
           window.location.assign('/');
         }
