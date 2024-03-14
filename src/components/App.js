@@ -2,29 +2,40 @@ import Login from './Login';
 import Main from './Main';
 import Page404 from './Page404';
 import React from 'react';
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import Register from './Register';
 import Profile from './Profile';
-//import cards from '../temp/cardList';
 import Movies from './Movies';
 import SavedMovies from './SavedMovies';
 import { movieApi } from '../utils/MoviesApi';
 import { mainApi } from '../utils/MainApi';
 import DevTool from './DevTool';
 import { MOVIES_API } from '../utils/const';
-
-export const CurrentUserContext = React.createContext();
-
-
-
+import { CurrentUserContext } from '../context/context';
 
 function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [cards, setCards] = React.useState([]);
   const [likedCards, setLikedCards] = React.useState([]);
   const token = localStorage.getItem('token');
+  const navigate = useNavigate();
 
   const [currentUser, setCurrentUser] = React.useState(() => JSON.parse(localStorage.getItem('currentUser')));
+
+  function checkToken() {
+    if (token) {
+      mainApi.checkToken(token)
+        .then((data) => {
+          if (data) {
+            setCurrentUser({ name: data.name, email: data.email, id: data._id });
+            setLoggedIn(true);
+            navigate("/", { replace: true })
+          }
+        })
+        .catch((err) => console.log(err));
+    }
+  }
+
 
   function login(formValue, setFormValue) {
     mainApi.login(formValue.email, formValue.password)
@@ -145,6 +156,10 @@ function App() {
     getAllLikedCards()
   },
     [])
+
+  React.useEffect(() => {
+    checkToken();
+  }, [])
 
   return (
     <div className="page">
