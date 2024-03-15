@@ -12,8 +12,10 @@
 @import url(./blocks/header/__button/_hide/header__button_hide.css);
 @import url(./blocks/header/__menu-icon/header__menu-icon.css);
 @import url(./blocks/header/__menu-button/header__menu-button.css);
+@import url(./blocks/header/__menu-button/_hide/header__menu-button_hide.css);
 @import url(./blocks/header/__account/header__account.css);
 @import url(./blocks/header/__account-button/header__account-button.css);
+@import url(./blocks/header/__account-button/_hide/header__account-button_hide.css);
 @import url(./blocks/header/__account-button-text/header__account-button-text.css);
 @import url(./blocks/header/__account-logo/header__account-logo.css);
 @import url(./blocks/header/__account-icon/header__account-icon.css);

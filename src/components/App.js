@@ -2,19 +2,94 @@ import Login from './Login';
 import Main from './Main';
 import Page404 from './Page404';
 import React from 'react';
-import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import Register from './Register';
 import Profile from './Profile';
-//import cards from '../temp/cardList';
 import Movies from './Movies';
 import SavedMovies from './SavedMovies';
 import { movieApi } from '../utils/MoviesApi';
-
-
+import { mainApi } from '../utils/MainApi';
+import DevTool from './DevTool';
+import { MOVIES_API } from '../utils/const';
+import { CurrentUserContext } from '../context/context';
 
 function App() {
-  const [loggedIn, setLoggedIn] = React.useState();
+  const [loggedIn, setLoggedIn] = React.useState(false);
+  const [searchValue, setSearchValue] = React.useState('');
   const [cards, setCards] = React.useState([]);
+  const [likedCards, setLikedCards] = React.useState([]);
+  const token = localStorage.getItem('token');
+  const navigate = useNavigate();
+  const [isFirstSearch, setIsFirstSearch] = React.useState(false);
+  const [currentUser, setCurrentUser] = React.useState(() => JSON.parse(localStorage.getItem('currentUser')));
+
+  function checkToken() {
+    if (token) {
+      mainApi.checkToken(token)
+        .then((data) => {
+          if (data) {
+            setCurrentUser({ name: data.name, email: data.email, id: data._id });
+            setLoggedIn(true);
+            navigate("/", { replace: true })
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+          setLoggedIn(false);
+          localStorage.clear();
+          goLogin();
+        });
+    }
+  }
+
+
+  function login(formValue, setFormValue) {
+    mainApi.login(formValue.email, formValue.password)
+      .then((data) => {
+        if (data) {
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('currentUser', JSON.stringify({ name: data.name, email: data.email, id: data._id }));
+          setCurrentUser({ name: data.name, email: data.email, id: data._id });
+          setFormValue({ email: '', password: '' });
+          window.location.assign('/');
+        }
+      })
+      .catch(err => console.log(err));
+  }
+  function registration(formValue, setFormValue) {
+    mainApi.registration(formValue.name, formValue.email, formValue.password)
+      .then((data) => {
+        console.log(data);
+        if (data) {
+          setFormValue({ name: '', email: '', password: '' });
+          window.location.assign('/sign-in');
+        }
+      })
+      .catch(err => console.log(err));
+  }
+
+  function editProfile({
+    name,
+    email,
+  }) {
+
+    mainApi.editProfile({ name, email })
+      .then((data) => {
+        setCurrentUser({ name: data.name, email: data.email });
+        localStorage.setItem('currentUser', JSON.stringify({ name: data.name, email: data.email }));
+      })
+      .then((data) => { console.log(data) })
+      .catch((err) => { console.log(`не удалось сохранить новый профиль, Ошибка: ${err}`) })
+  }
+
+  function handleLogout() {
+    setLoggedIn(false);
+    //localStorage.removeItem('token');
+    //localStorage.removeItem('currentUser');
+    //localStorage.removeItem('search');
+    localStorage.clear();
+    goLogin();
+  }
 
   function goToUrl(url) {
     window.open(url)
@@ -24,64 +99,124 @@ function App() {
     window.history.back()
   }
 
-  function logout() {
-    localStorage.removeItem('loggedIn');
-    setLoggedIn(false);
-    window.location.assign('/');
+  function goLogin() {
+    window.location.assign('/sign-in')
   }
-  function login(e) {
-    e.preventDefault();
-    setLoggedIn(true);
-    localStorage.setItem('loggedIn', true);
-    window.location.assign('/');
-  }
-  function registration(e) {
-    e.preventDefault();
-    window.location.assign('/sign-in');
-  }
+
+
   function getAllMovies() {
     movieApi.getAllMovies()
       .then((data) => {
-        console.log(data);
         setCards(data)
       })
       .catch((err) => { console.log(`не удалось обновить карточки, Ошибка: ${err}`) })
   }
+
+  function getAllLikedCards() {
+    mainApi.getAllLikes()
+      .then((likedCards) => {
+        if (likedCards) {
+          setLikedCards(likedCards)
+        } else {
+          console.log('у вас нет добавленных фильмов')
+        }
+      })
+      .catch((err) => { console.log(`не удалось обновить карточки, Ошибка: ${err}`) })
+  }
+
+  function handleAddLike(card) {
+    mainApi.addLike({
+      country: card.country,
+      director: card.director,
+      duration: card.duration,
+      year: card.year,
+      description: card.description,
+      image: `${MOVIES_API}${card.image.url}`,
+      trailerLink: card.trailerLink,
+      thumbnail: `${MOVIES_API}${card.image.formats.thumbnail.url}`,
+      movieId: String(card.id),
+      nameRU: card.nameRU,
+      nameEN: card.nameEN,
+    })
+      .then((newCard) => {
+        console.log(newCard);
+        setLikedCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+      })
+      .catch((err) => { console.log(`не удалось поставить лайк, Ошибка: ${err}`) });
+  }
+
+  function handleDeleteLike(card) {
+    mainApi.deleteLike(card._id)
+      .then((newCard) => {
+        setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+      })
+      .catch((err) => { console.log(`не удалось убрать лайк, Ошибка: ${err}`) });
+  }
+
 
   React.useEffect(() => {
     getAllMovies()
   },
     [])
 
+  React.useEffect(() => {
+    getAllLikedCards()
+  },
+    [])
+
+  React.useEffect(() => {
+    checkToken();
+  }, [])
+
   return (
     <div className="page">
       <div className="page__body">
-        <BrowserRouter>
+        <DevTool
+          loggedIn={loggedIn}
+          currentUser={currentUser}
+          token={token}
+        />
+        <CurrentUserContext.Provider value={currentUser}>
           <Routes>
             <Route path="/" element={<Main
               loggedIn={loggedIn}
               goToUrl={goToUrl}
+              token={token}
             />} />
             <Route path="/sign-in" element={<Login
-              onSubmit={login} />} />
-            <Route path="/sign-up" element={<Register
-              onSubmit={registration} />} />
-            <Route path="/profile" element={<Profile
-              loggedIn={loggedIn}
-              onSubmit={login}
-              logout={logout}
+              login={login}
+              currentUser={currentUser}
             />} />
-            <Route path="/movies" element={<Movies
-              cards={cards}
-              loggedIn={loggedIn} />} />
-            <Route path="/saved-movies" element={<SavedMovies
-              cards={cards}
-              loggedIn={loggedIn} />} />
+            <Route path="/sign-up" element={<Register
+              registration={registration} />} />
+            <Route path="/profile" element={<Profile
+              onSubmit={login}
+              handleLogout={handleLogout}
+              editProfile={editProfile}
+              currentUser={currentUser}
+            />} />
+            <Route path="/movies" element={
+              <Movies
+                cards={cards}
+                token={token}
+                handleAddLike={handleAddLike}
+                handleDeleteLike={handleDeleteLike}
+                isFirstSearch={isFirstSearch}
+                setIsFirstSearch={setIsFirstSearch}
+                searchValue={searchValue}
+                setSearchValue={setSearchValue}
+              />} />
+            <Route path="/saved-movies" element={
+              <SavedMovies
+                cards={likedCards}
+                token={token}
+                handleDeleteLike={handleDeleteLike}
+              />} />
             <Route path='*' element={<Page404
               onClick={goBack}
             />} />
           </Routes>
-        </BrowserRouter>
+        </CurrentUserContext.Provider>
       </div>
     </div>
   );

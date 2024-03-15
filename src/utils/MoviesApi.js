@@ -1,3 +1,5 @@
+import {MOVIES_API} from './const'
+
 class MovieApi {
     constructor(props) {
         this.url = props.url
@@ -20,9 +22,8 @@ class MovieApi {
 }
 
 export const movieApi = new MovieApi({
-    url: 'https://api.nomoreparties.co/beatfilm-movies',
+    url: `${MOVIES_API}/beatfilm-movies`,
     headers: {
        Accept: 'application/json',
-      // 'content-type': 'text/html',
     }
 })

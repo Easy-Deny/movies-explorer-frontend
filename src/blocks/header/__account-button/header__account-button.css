@@ -1,5 +1,5 @@
 .header__account-button {
-    display:inline-flex;
+    display:flex;
     border-radius: 40px;
     margin-top: 3px;
     margin-bottom: 3px;

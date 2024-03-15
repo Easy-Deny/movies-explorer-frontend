@@ -1,12 +1,9 @@
 import React from "react";
-function FilterCheckbox() {
-    const [filterActive, setFilterActive] = React.useState();
-    function handleFilterActive(){
-        setFilterActive(!filterActive);
-    }
+function FilterCheckbox(props) {
+
     return (
         <article className="filter">
-            <button className={`hover-animation ${!filterActive ? "filter__button": "filter__button filter__button_active" }`} title="filter" type="button" onClick={handleFilterActive}>
+            <button className={`hover-animation ${!props.isShortChecked ? "filter__button": "filter__button filter__button_active" }`} title="filter" type="button" onClick={props.toggleShortsFilter}>
                 <span className="filter__slider"></span>
             </button>
             <p className="filter__text">Короткометражки</p>
