@@ -15,11 +15,12 @@ import { CurrentUserContext } from '../context/context';
 
 function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
+  const [searchValue, setSearchValue] = React.useState('');
   const [cards, setCards] = React.useState([]);
   const [likedCards, setLikedCards] = React.useState([]);
   const token = localStorage.getItem('token');
   const navigate = useNavigate();
-
+  const [isFirstSearch, setIsFirstSearch] = React.useState(false);
   const [currentUser, setCurrentUser] = React.useState(() => JSON.parse(localStorage.getItem('currentUser')));
 
   function checkToken() {
@@ -32,7 +33,12 @@ function App() {
             navigate("/", { replace: true })
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.log(err);
+          setLoggedIn(false);
+          localStorage.clear();
+          goLogin();
+        });
     }
   }
 
@@ -78,9 +84,10 @@ function App() {
 
   function handleLogout() {
     setLoggedIn(false);
-    localStorage.removeItem('token');
-    localStorage.removeItem('currentUser');
-    localStorage.removeItem('search');
+    //localStorage.removeItem('token');
+    //localStorage.removeItem('currentUser');
+    //localStorage.removeItem('search');
+    localStorage.clear();
     goLogin();
   }
 
@@ -194,6 +201,10 @@ function App() {
                 token={token}
                 handleAddLike={handleAddLike}
                 handleDeleteLike={handleDeleteLike}
+                isFirstSearch={isFirstSearch}
+                setIsFirstSearch={setIsFirstSearch}
+                searchValue={searchValue}
+                setSearchValue={setSearchValue}
               />} />
             <Route path="/saved-movies" element={
               <SavedMovies
