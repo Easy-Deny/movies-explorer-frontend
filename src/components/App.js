@@ -6,6 +6,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 import Register from './Register';
 import Profile from './Profile';
 import Movies from './Movies';
+import InfoTool from './InfoTool';
 import SavedMovies from './SavedMovies';
 import { movieApi } from '../utils/MoviesApi';
 import { mainApi } from '../utils/MainApi';
@@ -15,13 +16,51 @@ import { CurrentUserContext } from '../context/context';
 
 function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
-  const [searchValue, setSearchValue] = React.useState('');
+  const [currentUser, setCurrentUser] = React.useState(() => JSON.parse(localStorage.getItem('currentUser')));
+  const [searchValue, setSearchValue] = React.useState(() => JSON.parse(localStorage.getItem('searchValue')));
+  const [searchChecked, setSearchChecked] = React.useState(() => JSON.parse(localStorage.getItem('searchChecked')));
   const [cards, setCards] = React.useState([]);
   const [likedCards, setLikedCards] = React.useState([]);
   const token = localStorage.getItem('token');
   const navigate = useNavigate();
   const [isFirstSearch, setIsFirstSearch] = React.useState(false);
-  const [currentUser, setCurrentUser] = React.useState(() => JSON.parse(localStorage.getItem('currentUser')));
+  const [isInfoToolOpen, setIsInfoToolOpen] = React.useState(false);
+  const [isMenuPopupOpen, setIsMenuPopupOpen] = React.useState(false);
+  const [infoMessage, setInfoMessage] = React.useState();
+  const isOpen = isInfoToolOpen || isMenuPopupOpen
+ 
+
+  function handleChangeSearch(e) {
+    setSearchValue(e.target.value);
+  }
+
+  function handleSearch(e) {
+    e.preventDefault();
+    setInfoMessage(`Вы ищите ${searchValue}`);
+    setIsInfoToolOpen(true);
+    localStorage.setItem('searchValue', JSON.stringify(searchValue))
+    // const searchValue = JSON.parse(localStorage.getItem('searchValue'));
+    if (isFirstSearch) {
+      setIsFirstSearch(false);
+    }
+    // props.findMovies(e.target.search.value);
+  }
+
+  function toggleShortsFilter() {
+    if (searchChecked) {
+      setSearchChecked(false);
+      localStorage.removeItem('searchChecked');
+      // props.filterMovies(props.searchValue || '', false, props.cards);
+    } else {
+      setSearchChecked(true);
+      localStorage.setItem('searchChecked', 'true');
+      //  props.filterMovies(props.searchValue || '', true, props.cards);
+    }
+  }
+
+  function handleMenuClick() {
+    setIsMenuPopupOpen(true);
+}
 
   function checkToken() {
     if (token) {
@@ -84,9 +123,6 @@ function App() {
 
   function handleLogout() {
     setLoggedIn(false);
-    //localStorage.removeItem('token');
-    //localStorage.removeItem('currentUser');
-    //localStorage.removeItem('search');
     localStorage.clear();
     goLogin();
   }
@@ -153,6 +189,12 @@ function App() {
       .catch((err) => { console.log(`не удалось убрать лайк, Ошибка: ${err}`) });
   }
 
+  function closeAllPopups() {
+    setInfoMessage('');
+    setIsInfoToolOpen(false);
+    setIsMenuPopupOpen(false);
+}
+
 
   React.useEffect(() => {
     getAllMovies()
@@ -165,16 +207,34 @@ function App() {
     [])
 
   React.useEffect(() => {
-    checkToken();
-  }, [])
+    checkToken()
+  },
+    [])
+
+
+    React.useEffect(() => {
+      function closeByEscape(evt) {
+          if (evt.key === 'Escape') {
+              closeAllPopups();
+          }
+      }
+      if (isOpen) {
+          document.addEventListener('keydown', closeByEscape);
+          return () => {
+              document.removeEventListener('keydown', closeByEscape);
+          }
+      }
+  }, [isOpen])
 
   return (
     <div className="page">
       <div className="page__body">
         <DevTool
-          loggedIn={loggedIn}
           currentUser={currentUser}
           token={token}
+          searchChecked={searchChecked}
+          isFirstSearch={isFirstSearch}
+          searchValue={searchValue}
         />
         <CurrentUserContext.Provider value={currentUser}>
           <Routes>
@@ -182,6 +242,9 @@ function App() {
               loggedIn={loggedIn}
               goToUrl={goToUrl}
               token={token}
+              isMenuPopupOpen={isMenuPopupOpen}
+              handleMenuClick={handleMenuClick}
+              closeAllPopups={closeAllPopups}
             />} />
             <Route path="/sign-in" element={<Login
               login={login}
@@ -205,6 +268,10 @@ function App() {
                 setIsFirstSearch={setIsFirstSearch}
                 searchValue={searchValue}
                 setSearchValue={setSearchValue}
+                toggleShortsFilter={toggleShortsFilter}
+                searchChecked={searchChecked}
+                handleSearch={handleSearch}
+                handleChangeSearch={handleChangeSearch}
               />} />
             <Route path="/saved-movies" element={
               <SavedMovies
@@ -216,6 +283,11 @@ function App() {
               onClick={goBack}
             />} />
           </Routes>
+          <InfoTool
+            isOpen={isInfoToolOpen ? 'popup_is-opened' : ''}
+            onClose={closeAllPopups} 
+            text={infoMessage}
+            />
         </CurrentUserContext.Provider>
       </div>
     </div>

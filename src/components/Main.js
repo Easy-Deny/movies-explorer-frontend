@@ -13,6 +13,9 @@ function Main(props) {
         loggedIn={props.loggedIn}
         greenTheme={true}
         token={props.token}
+        isMenuPopupOpen={props.isMenuPopupOpen}
+        handleMenuClick={props.handleMenuClick}
+        closeAllPopups={props.closeAllPopups}
       />
       <main>
         <Promo />

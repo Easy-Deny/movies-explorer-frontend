@@ -6,28 +6,21 @@ import NavTab from './NavTab';
 import React from 'react';
 
 function Header(props) {
-    const [isMenuPopupOpen, setIsMenuPopupOpen] = React.useState(false);
+    
     let location = useLocation();
 
-    function handleMenuClick() {
-        setIsMenuPopupOpen(true);
-    }
 
-    function closePopup() {
-        setIsMenuPopupOpen(false);
-        console.log(location);
-    }
 
     function handleGoHome(){
-        closePopup();
+        props.closeAllPopups();
         window.location.assign('/');
     }
     function handleGoMovies(){
-        closePopup();
+        props.closeAllPopups();
         window.location.assign('/movies');
     }
     function handleGoSavedMovies(){
-        closePopup();
+        props.closeAllPopups();
         window.location.assign('/saved-movies');
     }
     return (
@@ -49,18 +42,18 @@ function Header(props) {
                     </div>
                 </Link>
             </div>
-            <button className={`header__button header__menu-button hover-animation ${props.token === null ? 'header__menu-button_hide' : ''}`} onClick={handleMenuClick} type="button">
+            <button className={`header__button header__menu-button hover-animation ${props.token === null ? 'header__menu-button_hide' : ''}`} onClick={props.handleMenuClick} type="button">
                 <span className="header__menu-icon"></span>
                 <span className="header__menu-icon"></span>
                 <span className="header__menu-icon"></span>
             </button>
             <NavTab
-            isOpen={isMenuPopupOpen ? 'popup_is-opened' : ''}
-            onClose={closePopup}
+            isOpen={props.isMenuPopupOpen ? 'popup_is-opened' : ''}
+            onClose={props.closeAllPopups}
             goHome={handleGoHome}
             goMovies={handleGoMovies}
             goSavedMovies={handleGoSavedMovies}
-            loggedIn={props.loggedIn}
+         //   loggedIn={props.loggedIn}
             token={props.token}
             location={location}/>
         </header>

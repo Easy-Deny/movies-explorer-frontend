@@ -5,7 +5,11 @@ function DevTool(props) {
         <article>
             <p className="footer__year" >{`currentUser=${JSON.stringify(props.currentUser)} `}</p>
             <p className="footer__year" >{`token=${props.token}`}</p>
-            <p className="footer__year" >{`search=${localStorage.getItem('search')}`}</p>
+            <p className="footer__year" >{`searchValue=${props.searchValue}`}</p>
+            <p className="footer__year" >{`searchChecked=${props.searchChecked}`}</p>
+            <p className="footer__year" >{`isFirstSearch=${props.isFirstSearch}`}</p>
+
+            
         </article>
     );
 }

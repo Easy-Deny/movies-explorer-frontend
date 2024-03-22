@@ -53,6 +53,10 @@ export function Movies(props) {
                 setIsFirstSearch={props.setIsFirstSearch}
                 searchValue={props.searchValue}
                 setSearchValue={props.setSearchValue}
+                toggleShortsFilter={props.toggleShortsFilter}
+                searchChecked={props.searchChecked}
+                handleSearch={props.handleSearch}
+                handleChangeSearch={props.handleChangeSearch}
             />
             <MoviesCardList
                 cards={props.cards}
