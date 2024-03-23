@@ -49,8 +49,8 @@ export function Movies(props) {
                 isShortChecked={isShortChecked}
                 setIsShortChecked={setIsShortChecked}
                 searchBarState={searchBarState}
-                isFirstSearch={props.isFirstSearch}
-                setIsFirstSearch={props.setIsFirstSearch}
+              //  isFirstSearch={props.isFirstSearch}
+              //  setIsFirstSearch={props.setIsFirstSearch}
                 searchValue={props.searchValue}
                 setSearchValue={props.setSearchValue}
                 toggleShortsFilter={props.toggleShortsFilter}

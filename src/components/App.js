@@ -7,6 +7,7 @@ import Register from './Register';
 import Profile from './Profile';
 import Movies from './Movies';
 import InfoTool from './InfoTool';
+import Preloader from './Preloader.js';
 import SavedMovies from './SavedMovies';
 import { movieApi } from '../utils/MoviesApi';
 import { mainApi } from '../utils/MainApi';
@@ -20,31 +21,53 @@ function App() {
   const [searchValue, setSearchValue] = React.useState(() => JSON.parse(localStorage.getItem('searchValue')));
   const [searchChecked, setSearchChecked] = React.useState(() => JSON.parse(localStorage.getItem('searchChecked')));
   const [cards, setCards] = React.useState([]);
+  const [filteredCards, setFilteredCards] = React.useState(cards);
   const [likedCards, setLikedCards] = React.useState([]);
   const token = localStorage.getItem('token');
   const navigate = useNavigate();
-  const [isFirstSearch, setIsFirstSearch] = React.useState(false);
+  //const [isFirstSearch, setIsFirstSearch] = React.useState(() => JSON.parse(localStorage.getItem('isFirstSearch')));
   const [isInfoToolOpen, setIsInfoToolOpen] = React.useState(false);
   const [isMenuPopupOpen, setIsMenuPopupOpen] = React.useState(false);
+  const [isLoadingOpen, setIsLoadingOpen] = React.useState(false);
   const [infoMessage, setInfoMessage] = React.useState();
   const isOpen = isInfoToolOpen || isMenuPopupOpen
- 
+
 
   function handleChangeSearch(e) {
     setSearchValue(e.target.value);
   }
 
+  //поиск фильмов
   function handleSearch(e) {
     e.preventDefault();
-    setInfoMessage(`Вы ищите ${searchValue}`);
-    setIsInfoToolOpen(true);
-    localStorage.setItem('searchValue', JSON.stringify(searchValue))
-    // const searchValue = JSON.parse(localStorage.getItem('searchValue'));
-    if (isFirstSearch) {
-      setIsFirstSearch(false);
+    if (searchValue === '') {
+      setInfoMessage('Нужно ввести ключевое слово');
+      setIsInfoToolOpen(true);
+      return
     }
-    // props.findMovies(e.target.search.value);
+    //setFilteredCards(cards);
+    localStorage.setItem('searchValue', JSON.stringify(searchValue));
+     searchMovies(cards, searchValue);
+  
+    console.log(cards);
+    console.log(filteredCards);
+
+    if (filteredCards.length === 0) {
+      setInfoMessage('Ничего не найдено');
+      setIsInfoToolOpen(true);
+      return
+    }
   }
+
+  //фильтрация массива карточек
+  function searchMovies(cards,searchValue) {
+    const filtered = cards.filter(
+      (item) =>
+        item.nameRU.toLowerCase().includes(searchValue.toLowerCase()) ||
+        item.nameEN.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setFilteredCards(filtered);
+  };
 
   function toggleShortsFilter() {
     if (searchChecked) {
@@ -60,7 +83,7 @@ function App() {
 
   function handleMenuClick() {
     setIsMenuPopupOpen(true);
-}
+  }
 
   function checkToken() {
     if (token) {
@@ -193,7 +216,7 @@ function App() {
     setInfoMessage('');
     setIsInfoToolOpen(false);
     setIsMenuPopupOpen(false);
-}
+  }
 
 
   React.useEffect(() => {
@@ -205,26 +228,26 @@ function App() {
     getAllLikedCards()
   },
     [])
-
+    
   React.useEffect(() => {
     checkToken()
   },
     [])
-
-
-    React.useEffect(() => {
-      function closeByEscape(evt) {
-          if (evt.key === 'Escape') {
-              closeAllPopups();
-          }
+    
+  React.useEffect(() => {
+    function closeByEscape(evt) {
+      if (evt.key === 'Escape') {
+        closeAllPopups();
       }
-      if (isOpen) {
-          document.addEventListener('keydown', closeByEscape);
-          return () => {
-              document.removeEventListener('keydown', closeByEscape);
-          }
+    }
+    if (isOpen) {
+      document.addEventListener('keydown', closeByEscape);
+      return () => {
+        document.removeEventListener('keydown', closeByEscape);
       }
+    }
   }, [isOpen])
+
 
   return (
     <div className="page">
@@ -233,8 +256,9 @@ function App() {
           currentUser={currentUser}
           token={token}
           searchChecked={searchChecked}
-          isFirstSearch={isFirstSearch}
           searchValue={searchValue}
+          cards={cards}
+          filteredCards={filteredCards}
         />
         <CurrentUserContext.Provider value={currentUser}>
           <Routes>
@@ -260,12 +284,12 @@ function App() {
             />} />
             <Route path="/movies" element={
               <Movies
-                cards={cards}
+                cards={filteredCards}
                 token={token}
                 handleAddLike={handleAddLike}
                 handleDeleteLike={handleDeleteLike}
-                isFirstSearch={isFirstSearch}
-                setIsFirstSearch={setIsFirstSearch}
+           //     isFirstSearch={isFirstSearch}
+           //     setIsFirstSearch={setIsFirstSearch}
                 searchValue={searchValue}
                 setSearchValue={setSearchValue}
                 toggleShortsFilter={toggleShortsFilter}
@@ -283,12 +307,16 @@ function App() {
               onClick={goBack}
             />} />
           </Routes>
-          <InfoTool
-            isOpen={isInfoToolOpen ? 'popup_is-opened' : ''}
-            onClose={closeAllPopups} 
-            text={infoMessage}
-            />
+
+
         </CurrentUserContext.Provider>
+        <InfoTool
+          isOpen={isInfoToolOpen ? 'popup_is-opened' : ''}
+          onClose={closeAllPopups}
+          text={infoMessage}
+        />
+
+        <Preloader />
       </div>
     </div>
   );
