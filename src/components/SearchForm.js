@@ -1,5 +1,6 @@
 import FilterCheckbox from "./FilterCheckbox";
 import React from 'react';
+import SearchMessage from './SearchMessage';
 
 function SearchForm(props) {
 
@@ -15,6 +16,7 @@ function SearchForm(props) {
                     searchChecked={props.searchChecked}
                     toggleShortsFilter={props.toggleShortsFilter} />
             </form>
+<SearchMessage/>
         </article>
     );
 }

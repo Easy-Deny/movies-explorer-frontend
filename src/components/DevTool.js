@@ -9,7 +9,7 @@ function DevTool(props) {
             <p className="footer__year" >{`searchChecked=${props.searchChecked}`}</p>
             <p className="footer__year" >{`cards=${props.cards.length}`}</p>
             <p className="footer__year" >{`filteredCards=${props.filteredCards.length}`}</p>
-
+            <p className="footer__year" >{`searchMessage=${props.searchMessage}`}</p>
         </article>
     );
 }

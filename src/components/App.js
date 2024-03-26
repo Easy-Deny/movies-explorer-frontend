@@ -30,6 +30,7 @@ function App() {
   const [isMenuPopupOpen, setIsMenuPopupOpen] = React.useState(false);
   const [isLoadingOpen, setIsLoadingOpen] = React.useState(false);
   const [infoMessage, setInfoMessage] = React.useState();
+  const [searchMessage, setSearchMessage] = React.useState('');
   const isOpen = isInfoToolOpen || isMenuPopupOpen
 
 
@@ -266,6 +267,7 @@ function App() {
           searchValue={searchValue}
           cards={cards}
           filteredCards={filteredCards}
+          searchMessage={searchMessage}
         />
         <CurrentUserContext.Provider value={currentUser}>
           <Routes>
