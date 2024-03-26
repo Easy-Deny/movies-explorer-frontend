@@ -248,6 +248,12 @@ function App() {
     }
   }, [isOpen])
 
+  React.useEffect(()=>{
+    if (!cards || !searchValue)
+        return;
+    searchMovies(cards, searchValue);
+}, [filteredCards])
+
 
   return (
     <div className="page">
