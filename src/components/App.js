@@ -33,17 +33,19 @@ function App() {
   const [searchMessage, setSearchMessage] = React.useState(null);
   const isOpen = isInfoToolOpen || isMenuPopupOpen
 
-
+//устанавливаем результат поиска
   function handleChangeSearch(e) {
     setSearchValue(e.target.value);
+
   }
 
   //поиск фильмов
   function handleSearch(e) {
     e.preventDefault();
     if (searchValue === '') {
-      setInfoMessage('Нужно ввести ключевое слово');
-      setIsInfoToolOpen(true);
+      //setInfoMessage('Нужно ввести ключевое слово');
+      //setIsInfoToolOpen(true);
+      //setSearchMessage('Задан пустой поисковый запрос');
       return
     }
     //setFilteredCards(cards);
@@ -235,6 +237,15 @@ function App() {
     checkToken()
   },
     [])
+
+    React.useEffect(() => {
+      if (searchValue === '') {
+        setSearchMessage('пустой поисковый запрос');
+      } else {
+        setSearchMessage('');
+      }
+    },
+      [searchValue])
     
   React.useEffect(() => {
     function closeByEscape(evt) {
