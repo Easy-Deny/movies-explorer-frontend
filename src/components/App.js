@@ -62,9 +62,10 @@ function App() {
   //фильтрация массива карточек
   function searchMovies(cards,searchValue) {
     const filtered = cards.filter(
-      (item) =>
+      (item) => (
         item.nameRU.toLowerCase().includes(searchValue.toLowerCase()) ||
         item.nameEN.toLowerCase().includes(searchValue.toLowerCase())
+      ) && (searchChecked ? item.duration < 40 : true)
     );
     setFilteredCards(filtered);
   };
