@@ -142,3 +142,7 @@
 @import url(./blocks/preloader/preloader.css);
 
 @import url(./blocks/hover-animation/hover-animation.css);
+
+@import url(./blocks/searchMessage/searchMessage.css);
+@import url(./blocks/searchMessage/__text/searchMessage__text.css);
+@import url(./blocks/searchMessage/_is-visible/searchMessage_is-visible.css);

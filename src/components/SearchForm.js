@@ -16,7 +16,10 @@ function SearchForm(props) {
                     searchChecked={props.searchChecked}
                     toggleShortsFilter={props.toggleShortsFilter} />
             </form>
-<SearchMessage/>
+            <SearchMessage
+                searchMessage={props.searchMessage}
+                isOpen={props.searchMessage ? 'searchMessage_is-visible' : ''}
+            />
         </article>
     );
 }

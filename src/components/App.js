@@ -30,7 +30,7 @@ function App() {
   const [isMenuPopupOpen, setIsMenuPopupOpen] = React.useState(false);
   const [isLoadingOpen, setIsLoadingOpen] = React.useState(false);
   const [infoMessage, setInfoMessage] = React.useState();
-  const [searchMessage, setSearchMessage] = React.useState('');
+  const [searchMessage, setSearchMessage] = React.useState(null);
   const isOpen = isInfoToolOpen || isMenuPopupOpen
 
 
@@ -297,8 +297,7 @@ function App() {
                 token={token}
                 handleAddLike={handleAddLike}
                 handleDeleteLike={handleDeleteLike}
-           //     isFirstSearch={isFirstSearch}
-           //     setIsFirstSearch={setIsFirstSearch}
+                searchMessage={searchMessage}
                 searchValue={searchValue}
                 setSearchValue={setSearchValue}
                 toggleShortsFilter={toggleShortsFilter}
